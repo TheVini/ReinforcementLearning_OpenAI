@@ -9,6 +9,16 @@ model_output_dir = 'models'
 video_output_dir = 'videos'
 
 
+def normalize(x):
+    return x / np.linalg.norm(x)
+
+
+def softmax(x):
+    """Compute softmax values for each sets of scores in x."""
+    e_x = np.exp(x - np.max(x))
+    return e_x / e_x.sum(axis=0)
+
+
 def full_plot(ep_score, ep_losses, text, output_dir):
     plot_score(ep_score, text, output_dir)
     plot_loss(ep_losses, text, output_dir, batch_size=32)
@@ -22,7 +32,7 @@ def plot_score(ep_score, text, output_dir):
         fig = plt.figure(figsize=(20, 14))
         fig.suptitle(text, fontsize=14, fontweight='bold')
         plt.ylabel("Score", fontsize=22)
-        plt.xlabel("Training Epochs", fontsize=22)
+        plt.xlabel("Training Epísodes", fontsize=22)
         plt.plot(ep_score, linewidth=0.5, color='green')
         plt.grid()
         # plt.show()
@@ -47,7 +57,7 @@ def plot_loss(ep_losses, text, output_dir, batch_size=32):
         fig = plt.figure(figsize=(50, 20))
         fig.suptitle(text, fontsize=15, fontweight='bold')
         plt.ylabel("Loss", fontsize=15)
-        plt.xlabel("Training - Epochs + Episode", fontsize=15)
+        plt.xlabel("Training - Time + Episode", fontsize=15)
         plt.grid()
         plt.plot(ep_loss, linewidth=0.5, color='green')
         # plt.show()

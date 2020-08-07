@@ -1,4 +1,4 @@
-from projectFiles import VGBAgent, VGBUtils
+from projectFiles import VGBAgent
 import numpy as np
 
 n_episodes = 10000
@@ -10,8 +10,7 @@ for e in range(n_episodes):
     state = np.reshape(state, [1, agent.state_size])
 
     for time in range(7000):
-        action = agent.act(state)
-        next_state, reward, done, _ = agent.env.step(action)
+        next_state, reward, done, _, action = agent.choose_take_simple_act(state)
         score += reward
         next_state = np.reshape(next_state, [1, agent.state_size])
 
