@@ -124,16 +124,6 @@ def plot_loss(ep_losses, text, batch_size=32):
         plt.close('all')
 
 
-def running_mean(x, N=50):
-    kernel = np.ones(N)
-    conv_len = x.shape[0] - N
-    y = np.zeros(conv_len)
-    for i in range(conv_len):
-        y[i] = kernel @ x[i:i + N]
-        y[i] /= N
-    return y
-
-
 def disable_view_window():
     from gym.envs.classic_control import rendering
     org_constructor = rendering.Viewer.__init__
