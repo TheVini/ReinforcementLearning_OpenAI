@@ -10,7 +10,7 @@ for e in range(n_episodes):
     state = np.reshape(state, [1, agent.state_size])
 
     for time in range(7000):
-        next_state, reward, done, _, action = agent.choose_take_simple_act(state)
+        next_state, reward, done, _, action = agent.choose_take_complex_action(state)
         score += reward
         next_state = np.reshape(next_state, [1, agent.state_size])
 

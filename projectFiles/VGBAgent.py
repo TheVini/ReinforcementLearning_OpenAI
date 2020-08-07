@@ -26,7 +26,7 @@ class DQNAgent:
 
         self.epsilon = 1.0
         self.epsilon_decay = .95
-        self.epsilon_min = 0.00001
+        self.epsilon_min = 0.05
         self.DLModel = VGBModel.DLModel(self.env, self.action_size, self.others_dir)
         self.ep_score, self.renders, self.losses = [], [], []
 
@@ -91,8 +91,8 @@ class DQNAgent:
         self.choose_simple_action(state)
         return self.take_action()
 
-    def choose_take_complex_action(self, state, episode):
-        if episode > 500:
+    def choose_take_complex_action(self, state):
+        if self.epsilon > self.epsilon_min:
             self.choose_simple_action(state)
         else:
             self.choose_complex_ep_greedy_act(state)
