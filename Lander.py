@@ -1,8 +1,11 @@
-from projectFiles import VGBAgent
+from projectFiles import VGBAgent, VGBUtils
+from datetime import datetime
 import numpy as np
 
+
 n_episodes = 10000
-agent = VGBAgent.DQNAgent(delete_dirs=True)
+agent = VGBAgent.DQNAgent(record_video=True, delete_dirs=True)
+start = datetime.now().time().strftime('%H:%M:%S')
 
 for e in range(n_episodes):
     score = 0.
@@ -18,8 +21,14 @@ for e in range(n_episodes):
         agent.train_001()
 
         if done:
-            print('episode: {}/{}, episodes: {}, epsilon {:.4}, score: {:.4}, reward {:}'
-                  .format(e+1, n_episodes, time, agent.epsilon, score, reward))
+            end = datetime.now().time().strftime('%H:%M:%S')
+            total_time = (datetime.strptime(end, '%H:%M:%S') - datetime.strptime(start, '%H:%M:%S'))
+            output_text = 'episode: {}/{}, episodes: {}, epsilon {:.4}, ' \
+                          'score: {:.4}, reward {:}, elapsed time {}'.\
+                format(e+1, n_episodes, time, agent.epsilon, score, reward, str(total_time))
+
+            print(output_text)
+            VGBUtils.log_info(output_text)
             agent.save_model(e, score)
             break
     agent.checkout_steps(e, score)

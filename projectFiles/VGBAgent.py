@@ -9,11 +9,12 @@ import imageio
 
 
 class DQNAgent:
-    def __init__(self, delete_dirs=False):
+    def __init__(self, record_video=False, delete_dirs=False):
         VGBUtils.disable_view_window()
         self.env = gym.make('LunarLander-v2')
         self.state_size = self.env.observation_space.shape[0]
         self.action_size = self.env.action_space.n
+        self.record_video = record_video
         if delete_dirs:
             VGBUtils.del_dirs()
         self.model_output_dir, self.video_output_dir, self.others_dir = VGBUtils.create_dirs()
@@ -21,7 +22,7 @@ class DQNAgent:
         self.highest_score = 0
         self.action = 0
         self.batch_size = 32
-        self.memory = deque(maxlen=200000)
+        self.memory = deque(maxlen=2000)
         self.gamma = 0.99
 
         self.epsilon = 1.0
@@ -31,8 +32,9 @@ class DQNAgent:
         self.ep_score, self.renders, self.losses = [], [], []
 
     def remember(self, state, action, reward, next_state, done):
-        # Append new frame to video memory
-        self.renders.append(img_as_ubyte(resize(self.env.render(mode='rgb_array'), (640, 960, 3))))
+        if self.record_video:
+            # Append new frame to video memory
+            self.renders.append(img_as_ubyte(resize(self.env.render(mode='rgb_array'), (640, 960, 3))))
         # Append set of parameters to memory
         self.memory.append((state, action, reward, next_state, done))
         # Send next state as old state
@@ -48,11 +50,12 @@ class DQNAgent:
         """
         self.DLModel.update_target_model()
         self.ep_score.append(score)
-        # Set video name
-        video_name = self.video_output_dir + '/Lander_{:08d}.mp4'.format(episode + 1)
-        # Record video and clean render list
-        imageio.mimwrite(video_name, self.renders, fps=60)
-        self.renders.clear()
+        if self.record_video:
+            # Set video name
+            video_name = self.video_output_dir + '/Lander_{:08d}.mp4'.format(episode + 1)
+            # Record video and clean render list
+            imageio.mimwrite(video_name, self.renders, fps=60)
+            self.renders.clear()
         text = "Episode {}".format(episode + 1)
         # Plot graphs
         VGBUtils.full_plot(self.ep_score, self.losses, text, self.others_dir)
