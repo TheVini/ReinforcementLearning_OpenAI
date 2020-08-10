@@ -11,8 +11,8 @@ class DLModel:
         self.output_dir = output_dir
         self.env = env
         self.action_size = action_size
-        self.model = self._build_model_002()
-        self.target_model = self._build_model_002()
+        self.model = self._build_model_001()
+        self.target_model = self._build_model_001()
         self.update_target_model()
 
     def _build_model_001(self):

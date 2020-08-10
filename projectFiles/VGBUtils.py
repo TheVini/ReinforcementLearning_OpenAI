@@ -1,12 +1,13 @@
 from IPython.display import clear_output
 from matplotlib import pyplot as plt
+from os import walk
 import numpy as np
 import os
-import shutil
 
-others_dir = 'others'
-model_output_dir = 'models'
-video_output_dir = 'videos'
+output_folder = 'output_files'
+others_dir = output_folder + '/others'
+model_output_dir = output_folder + '/models'
+video_output_dir = output_folder + '/videos'
 
 
 def normalize(x):
@@ -21,12 +22,12 @@ def softmax(x):
 
 def log_info(text):
     with open(others_dir + '/report.txt', 'a+') as file:
-        file.write(text)
+        file.write(text + '\n')
 
 
-def full_plot(ep_score, ep_losses, text, output_dir):
+def full_plot(ep_score, ep_losses, text, output_dir, batch_size=32):
     plot_score(ep_score, text, output_dir)
-    plot_loss(ep_losses, text, output_dir, batch_size=32)
+    plot_loss(ep_losses, text, output_dir, batch_size=batch_size)
 
 
 def plot_score(ep_score, text, output_dir):
@@ -82,6 +83,8 @@ def disable_view_window():
 
 
 def create_dirs():
+    if not os.path.exists(output_folder):
+        os.makedirs(output_folder)
     if not os.path.exists(model_output_dir):
         os.makedirs(model_output_dir)
     if not os.path.exists(video_output_dir):
@@ -91,13 +94,22 @@ def create_dirs():
     return [model_output_dir, video_output_dir, others_dir]
 
 
+def get_last_folder_index():
+    directories = []
+    for (dirpath, dirnames, filenames) in walk(os.getcwd()):
+        if dirpath == os.getcwd():
+            [directories.append(each) for each in dirnames if each.find(output_folder) >= 0]
+    directories = [each.replace(output_folder, '') for each in directories]
+    directories = [each.replace('_', '') for each in directories]
+    [directories.remove(each) for each in directories if len(each) == 0]
+    directories = [int(each) for each in directories]
+    if len(directories) == 0:
+        return '001'
+    return '{:03d}'.format(max(directories) + 1)
+
+
 def del_dirs():
-    if os.path.exists(model_output_dir):
-        shutil.rmtree(model_output_dir)
-        print("!!! {} folder was deleted !!!".format(model_output_dir))
-    if os.path.exists(video_output_dir):
-        shutil.rmtree(video_output_dir)
-        print("!!! {} folder was deleted !!!".format(video_output_dir))
-    if os.path.exists(others_dir):
-        shutil.rmtree(others_dir)
-        print("!!! {} folder was deleted !!!".format(others_dir))
+    folder_index = get_last_folder_index()
+    if os.path.exists(output_folder):
+        os.rename(output_folder, output_folder + '_' + folder_index)
+        print("!!! {} folder was renamed !!!".format(output_folder))
