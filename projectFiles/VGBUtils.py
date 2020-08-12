@@ -1,8 +1,10 @@
+from scipy.ndimage.filters import gaussian_filter1d
 from IPython.display import clear_output
 from matplotlib import pyplot as plt
 from os import walk
 import numpy as np
 import os
+import math
 
 output_folder = 'output_files'
 others_dir = output_folder + '/others'
@@ -21,6 +23,7 @@ def softmax(x):
 
 
 def log_info(text):
+    print(text)
     with open(others_dir + '/report.txt', 'a+') as file:
         file.write(text + '\n')
 
@@ -28,6 +31,7 @@ def log_info(text):
 def full_plot(ep_score, ep_losses, text, output_dir, batch_size=32):
     plot_score(ep_score, text, output_dir)
     plot_loss(ep_losses, text, output_dir, batch_size=batch_size)
+    # plot_loss_details(ep_losses, text, output_dir)
 
 
 def plot_score(ep_score, text, output_dir):
@@ -35,11 +39,13 @@ def plot_score(ep_score, text, output_dir):
         clear_output(wait=True)
         ep_score = np.array(ep_score)
 
+        ep_score_smooth = gaussian_filter1d(ep_score, sigma=4)
         fig = plt.figure(figsize=(20, 14))
         fig.suptitle(text, fontsize=14, fontweight='bold')
         plt.ylabel("Score", fontsize=22)
-        plt.xlabel("Training Epísodes", fontsize=22)
+        plt.xlabel("Training Episodes", fontsize=22)
         plt.plot(ep_score, linewidth=0.5, color='green')
+        plt.plot(ep_score_smooth, linewidth=2, color='red')
         plt.grid()
         # plt.show()
         fig.savefig(output_dir + '/score.png', bbox_inches='tight', pad_inches=0.25)
@@ -53,19 +59,20 @@ def plot_loss(ep_losses, text, output_dir, batch_size=32):
     """
     if len(ep_losses) > batch_size:
         ep_losses_np = np.array(ep_losses)
-        ep_loss = []
-        batches = int(len(ep_losses_np) / batch_size) if len(ep_losses_np) % batch_size == 0 else int(
-            len(ep_losses_np) / batch_size) + 1
-        new_ep_loss = np.array_split(ep_losses_np, batches)
-        for batch in new_ep_loss:
-            (ep_loss.append(np.mean(batch)) if np.mean(batch) < 10 else 10)
+        new_ep_loss = []
 
+        for small_list in np.array_split(ep_losses_np, math.ceil(len(ep_losses_np)/batch_size)):
+            if len(small_list) > 0:
+                new_ep_loss.append(np.mean(small_list))
+
+        ep_losses_smooth = gaussian_filter1d(new_ep_loss, sigma=4)
         fig = plt.figure(figsize=(50, 20))
         fig.suptitle(text, fontsize=15, fontweight='bold')
         plt.ylabel("Loss", fontsize=15)
         plt.xlabel("Training - Time + Episode", fontsize=15)
         plt.grid()
-        plt.plot(ep_loss, linewidth=0.5, color='green')
+        plt.plot(new_ep_loss, linewidth=0.5, color='green')
+        plt.plot(ep_losses_smooth, linewidth=4, color='red')
         # plt.show()
         fig.savefig(output_dir + '/loss.png', bbox_inches='tight', pad_inches=0.25)
         plt.close('all')

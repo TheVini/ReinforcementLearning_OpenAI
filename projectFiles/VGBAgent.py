@@ -16,7 +16,7 @@ class ActionTypeEnum(Enum):
 
 
 class DQNAgent:
-    def __init__(self, deque_size=None, replay=1, action_type=1, record_video=False):
+    def __init__(self, memory_size=None, replay=1, action_type=1, batch_size=32, record_video=False):
         VGBUtils.disable_view_window()
         VGBUtils.del_dirs()
         self.actions_dict = {ActionTypeEnum.SimpleAction: 'Simple Action',
@@ -32,14 +32,22 @@ class DQNAgent:
 
         self.highest_score = 0
         self.action = 0
-        self.batch_size = 32
-        self.epoch = 5
-        self.memory = deque(maxlen=self.batch_size) if deque_size is None else deque(maxlen=deque_size)
+        self.batch_size = batch_size
+        self.epoch = 1
+
+        if replay not in [1, 7]:
+            self.maxlen = None
+        else:
+            if memory_size is None:
+                self.maxlen = 20000
+            else:
+                self.maxlen = memory_size
+        self.memory = deque(maxlen=self.maxlen)
         self.gamma = 0.99
 
         self.epsilon = 1.0
-        self.epsilon_decay = .95
-        self.epsilon_min = 0.05
+        self.epsilon_decay = .99
+        self.epsilon_min = 0.01
         self.DLModel = VGBModel.DLModel(self.env, self.action_size, self.others_dir)
         self.ep_score, self.renders, self.losses = [], [], []
 
@@ -79,7 +87,6 @@ class DQNAgent:
         # Plot graphs
         VGBUtils.full_plot(self.ep_score, self.losses, text, self.others_dir, batch_size=self.batch_size)
         self.update_epsilon()
-        self.clear_memory()
 
     def save_model(self, episode, score):
         """
@@ -90,10 +97,6 @@ class DQNAgent:
         elif score > self.highest_score:
             self.highest_score = score
             self.DLModel.save(self.model_output_dir + '/weights_final' + '{:04d}'.format(episode + 1) + ".hdf5")
-
-    def clear_memory(self):
-        if self.replay == 2:
-            self.memory.clear()
 
     def _take_action(self):
         next_state, reward, done, _ = self.env.step(self.action)
@@ -125,58 +128,57 @@ class DQNAgent:
             self._choose_complex_ep_greedy_act(state)
         return self._take_action()
 
+    def is_solved(self):
+        if len(self.ep_score) > 200:
+            return np.mean(self.ep_score[-200]) > 200
+        return False
+
     def choose_and_take_action(self, state):
         if self.action_type == ActionTypeEnum.SimpleAction:
             return self._choose_take_simple_action(state)
         if self.action_type == ActionTypeEnum.ComplexAction:
             return self._choose_take_complex_action(state)
 
-    def train(self):
+    def train_during_episode(self):
         if len(self.memory) >= self.batch_size:
-            loss = 0
             if self.replay == 1:
-                loss = self.replay_001(self.batch_size)
+                self.replay_001()
             elif self.replay == 2:
-                loss = self.replay_002(self.batch_size)
-            self.losses.append(loss)
+                self.replay_002()
 
-    def discount_rewards(self, rewards):
-        disc_return = []
-        [disc_return.append(reward * pow(self.gamma, index)) for index, reward in enumerate(rewards)]
-        disc_return /= max(disc_return)
-        return disc_return
-
-    def replay_001(self, batch_size):
-        minibatch = random.sample(self.memory, batch_size)
+    def replay_001(self):
+        minibatch = random.sample(self.memory, self.batch_size)
         states = []
         targets = []
 
         for state, action, reward, next_state, done in minibatch:
-            target = reward
-            if not done:
-                aux = np.amax(self.DLModel.target_model.predict(next_state)[0])
-                target = (reward + self.gamma * aux)
+            aux = np.amax(self.DLModel.target_model.predict(next_state)[0]) * (1 - done)
+            target = (reward + self.gamma * aux)
+
             target_f = self.DLModel.model.predict(state)
             target_f[0][action] = target
             states.append(state[0])
             targets.append(target_f[0])
 
         history = self.DLModel.model.fit(np.array(states), np.array(targets), epochs=self.epoch, verbose=0)
-        return np.mean(history.history['loss'])
+        self.losses.append(np.mean(history.history['loss']))
 
-    def replay_002(self, batch_size):
-        minibatch = random.sample(self.memory, batch_size)
-        targets = []
-        states = []
+    def replay_002(self):
+        minibatch = random.sample(self.memory, self.batch_size)
+        states = np.array([i[0] for i in minibatch])
+        actions = np.array([i[1] for i in minibatch])
+        rewards = np.array([i[2] for i in minibatch])
+        next_states = np.array([i[3] for i in minibatch])
+        dones = np.array([i[4] for i in minibatch])
 
-        reward_batch = [reward for state, action, reward, next_state, done in minibatch]
-        reward_batch = self.discount_rewards(reward_batch)
+        states = np.squeeze(states)
+        next_states = np.squeeze(next_states)
 
-        for index, (state, action, reward, next_state, done) in enumerate(minibatch):
-            target_f = self.DLModel.model.predict(state)
-            target_f[0][action] *= reward_batch[index]
-            targets.append(target_f[0])
-            states.append(state[0])
+        targets = rewards + self.gamma * (np.amax(self.DLModel.model.predict_on_batch(next_states),
+                                                  axis=1)) * (1 - dones)
+        targets_full = self.DLModel.model.predict_on_batch(states)
+        ind = np.array([i for i in range(self.batch_size)])
+        targets_full[[ind], [actions]] = targets
 
-        history = self.DLModel.model.fit(np.array(states), np.array(targets), epochs=self.epoch, verbose=0)
-        return np.mean(history.history['loss'])
+        history = self.DLModel.model.fit(states, targets_full, epochs=1, verbose=0)
+        self.losses.append(np.mean(history.history['loss']))
