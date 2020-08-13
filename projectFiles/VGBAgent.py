@@ -16,9 +16,8 @@ class ActionTypeEnum(Enum):
 
 
 class DQNAgent:
-    def __init__(self, memory_size=None, replay=1, action_type=1, batch_size=32, record_video=False):
+    def __init__(self, memory_size=None, replay=1, action_type=1, batch_size=32, success_margin=150, record_video=False):
         VGBUtils.disable_view_window()
-        VGBUtils.del_dirs()
         self.actions_dict = {ActionTypeEnum.SimpleAction: 'Simple Action',
                              ActionTypeEnum.ComplexAction: 'Complex Action'}
 
@@ -44,6 +43,7 @@ class DQNAgent:
                 self.maxlen = memory_size
         self.memory = deque(maxlen=self.maxlen)
         self.gamma = 0.99
+        self.success_margin = success_margin
 
         self.epsilon = 1.0
         self.epsilon_decay = .99
@@ -53,10 +53,10 @@ class DQNAgent:
 
         general_info = 'Agent info:\n\tBatch size: {}\n\tEpoch(s): {}\n\t' \
                        'Memory length: {}\n\tGamma: {}\n\tEpsilon decay: {}\n\tReplay: {:03d}\n\t' \
-                       'Action Type: {}\n'\
+                       'Success Margin: -{}\n\tAction Type: {}\n'\
             .format(self.batch_size, self.epoch, self.memory.maxlen, self.gamma,
-                    self.epsilon_decay, self.replay, self.actions_dict[self.action_type])
-        VGBUtils.log_info(general_info)
+                    self.epsilon_decay, self.replay, self.success_margin, self.actions_dict[self.action_type])
+        VGBUtils.log_info(self.others_dir, general_info)
 
     def remember(self, state, action, reward, next_state, done):
         if self.record_video:
@@ -129,8 +129,8 @@ class DQNAgent:
         return self._take_action()
 
     def is_solved(self):
-        if len(self.ep_score) > 200:
-            return np.mean(self.ep_score[-200]) > 200
+        if len(self.ep_score) > self.success_margin:
+            return np.mean(self.ep_score[-self.success_margin]) > 200
         return False
 
     def choose_and_take_action(self, state):

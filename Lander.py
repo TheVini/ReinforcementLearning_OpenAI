@@ -7,7 +7,7 @@ n_episodes = 400
 duration = 7000
 replay = 2
 action = 1
-agent = VGBAgent.DQNAgent(replay=replay, action_type=action, batch_size=64, record_video=False)
+agent = VGBAgent.DQNAgent(replay=replay, action_type=action, batch_size=32, success_margin=250, record_video=False)
 start = datetime.now().time().strftime('%H:%M:%S')
 
 for e in range(n_episodes):
@@ -28,11 +28,11 @@ for e in range(n_episodes):
             output_text = 'Episode: {}/{}, rounds: {}, epsilon: {:.4}, ' \
                           'score: {:.4}, reward: {:}, elapsed time: {}'.\
                 format(e+1, n_episodes, time, agent.epsilon, score, reward, str(total_time))
-            VGBUtils.log_info(output_text)
+            VGBUtils.log_info(agent.others_dir, output_text)
             agent.save_model(e, score)
             break
     agent.checkout_steps(e, score)
     if agent.is_solved():
         success_text = f"Task was solved at episode {e}"
-        VGBUtils.log_info(success_text)
+        VGBUtils.log_info(agent.others_dir, success_text)
         break

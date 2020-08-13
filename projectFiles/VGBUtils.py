@@ -7,9 +7,6 @@ import os
 import math
 
 output_folder = 'output_files'
-others_dir = output_folder + '/others'
-model_output_dir = output_folder + '/models'
-video_output_dir = output_folder + '/videos'
 
 
 def normalize(x):
@@ -22,9 +19,9 @@ def softmax(x):
     return e_x / e_x.sum(axis=0)
 
 
-def log_info(text):
+def log_info(dir_path, text):
     print(text)
-    with open(others_dir + '/report.txt', 'a+') as file:
+    with open(dir_path + '/report.txt', 'a+') as file:
         file.write(text + '\n')
 
 
@@ -90,15 +87,21 @@ def disable_view_window():
 
 
 def create_dirs():
-    if not os.path.exists(output_folder):
-        os.makedirs(output_folder)
-    if not os.path.exists(model_output_dir):
-        os.makedirs(model_output_dir)
-    if not os.path.exists(video_output_dir):
-        os.makedirs(video_output_dir)
-    if not os.path.exists(others_dir):
-        os.makedirs(others_dir)
-    return [model_output_dir, video_output_dir, others_dir]
+    folder_index = get_last_folder_index()
+    local_output_folder = output_folder + '_' + folder_index
+    local_others_dir = local_output_folder + '/others'
+    local_model_output_dir = local_output_folder + '/models'
+    local_video_output_dir = local_output_folder + '/videos'
+
+    if not os.path.exists(local_output_folder):
+        os.makedirs(local_output_folder)
+    if not os.path.exists(local_model_output_dir):
+        os.makedirs(local_model_output_dir)
+    if not os.path.exists(local_video_output_dir):
+        os.makedirs(local_video_output_dir)
+    if not os.path.exists(local_others_dir):
+        os.makedirs(local_others_dir)
+    return [local_model_output_dir, local_video_output_dir, local_others_dir]
 
 
 def get_last_folder_index():
@@ -113,10 +116,3 @@ def get_last_folder_index():
     if len(directories) == 0:
         return '001'
     return '{:03d}'.format(max(directories) + 1)
-
-
-def del_dirs():
-    folder_index = get_last_folder_index()
-    if os.path.exists(output_folder):
-        os.rename(output_folder, output_folder + '_' + folder_index)
-        print("!!! {} folder was renamed !!!".format(output_folder))
