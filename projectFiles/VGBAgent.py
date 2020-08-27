@@ -2,7 +2,6 @@ from collections import deque
 from projectFiles import VGBModel, VGBUtils
 from skimage import img_as_ubyte
 from skimage.transform import resize
-from math import pow
 from enum import Enum
 import numpy as np
 import gym
@@ -16,7 +15,8 @@ class ActionTypeEnum(Enum):
 
 
 class DQNAgent:
-    def __init__(self, memory_size=None, replay=1, action_type=1, batch_size=32, success_margin=150, record_video=False):
+    def __init__(self, memory_size=None, replay=1, action_type=1, batch_size=32, model_type=1, success_margin=150,
+                 record_video=False, target_model=False):
         VGBUtils.disable_view_window()
         self.actions_dict = {ActionTypeEnum.SimpleAction: 'Simple Action',
                              ActionTypeEnum.ComplexAction: 'Complex Action'}
@@ -27,6 +27,7 @@ class DQNAgent:
         self.record_video = record_video
         self.action_type = ActionTypeEnum(action_type)
         self.model_output_dir, self.video_output_dir, self.others_dir = VGBUtils.create_dirs()
+        self.target_model = target_model
         self.replay = replay
 
         self.highest_score = 0
@@ -48,7 +49,7 @@ class DQNAgent:
         self.epsilon = 1.0
         self.epsilon_decay = .99
         self.epsilon_min = 0.01
-        self.DLModel = VGBModel.DLModel(self.env, self.action_size, self.others_dir)
+        self.DLModel = VGBModel.DLModel(self.env, self.action_size, model_type, self.others_dir)
         self.ep_score, self.renders, self.losses = [], [], []
 
         general_info = 'Agent info:\n\tBatch size: {}\n\tEpoch(s): {}\n\t' \
@@ -174,8 +175,12 @@ class DQNAgent:
         states = np.squeeze(states)
         next_states = np.squeeze(next_states)
 
-        targets = rewards + self.gamma * (np.amax(self.DLModel.model.predict_on_batch(next_states),
-                                                  axis=1)) * (1 - dones)
+        if self.target_model:
+            targets = rewards + self.gamma * (np.amax(self.DLModel.target_model.predict_on_batch(next_states),
+                                                      axis=1)) * (1 - dones)
+        else:
+            targets = rewards + self.gamma * (np.amax(self.DLModel.model.predict_on_batch(next_states),
+                                                      axis=1)) * (1 - dones)
         targets_full = self.DLModel.model.predict_on_batch(states)
         ind = np.array([i for i in range(self.batch_size)])
         targets_full[[ind], [actions]] = targets

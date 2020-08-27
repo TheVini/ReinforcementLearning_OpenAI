@@ -73,6 +73,9 @@ def plot_loss(ep_losses, text, output_dir, batch_size=32):
         # plt.show()
         fig.savefig(output_dir + '/loss.png', bbox_inches='tight', pad_inches=0.25)
         plt.close('all')
+        with open(output_dir + '/losses.txt', 'w+') as file:
+            for each in new_ep_loss:
+                file.write(str(each)+'\n')
 
 
 def disable_view_window():
