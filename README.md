@@ -7,7 +7,7 @@
 
 #### [1. OpenAI Gym - LunarLander-v2](https://gym.openai.com/envs/LunarLander-v2/)
 
-<table>
+<table style="width:100%">
     <thead>
         <tr>
             <th>Topic</th>
@@ -34,7 +34,7 @@
     </tbody>
 </table>
 
-<table>
+<table style="width:100%">
     <thead>
         <tr>
             <th>Before</th>
