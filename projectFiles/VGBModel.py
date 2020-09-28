@@ -29,9 +29,6 @@ class DLModel:
         elif model_type == 6:
             self.model = self._build_model_006()
             self.target_model = self._build_model_006()
-        elif model_type == 7:
-            self.model = self._build_model_007()
-            self.target_model = self._build_model_007()
         self.update_target_model()
 
     def _build_model_001(self):
@@ -67,8 +64,8 @@ class DLModel:
     def _build_model_004(self):
         model = tf.keras.models.Sequential()
         state_shape = self.env.observation_space.shape
-        model.add(Dense(150, input_shape=state_shape, activation='swish'))
-        model.add(Dense(120, activation='swish'))
+        model.add(Dense(24, input_shape=state_shape, activation=LeakyReLU()))
+        model.add(Dense(48, activation=LeakyReLU()))
         model.add(Dense(self.action_size, activation='linear'))
         loss = tf.keras.losses.Huber()
         model.compile(loss=loss, optimizer=Adam(lr=self.learning_rate), metrics=['mse', 'mae'])
@@ -81,27 +78,16 @@ class DLModel:
         model.add(Dense(150, input_shape=state_shape, activation=LeakyReLU()))
         model.add(Dense(120, activation=LeakyReLU()))
         model.add(Dense(self.action_size, activation='linear'))
-        opt = tf.keras.optimizers.SGD(lr=self.learning_rate)
-        model.compile(loss='mse', optimizer=opt, metrics=['mse'])
+        loss = tf.keras.losses.Huber()
+        model.compile(loss=loss, optimizer=Adam(lr=self.learning_rate), metrics=['mse', 'mae'])
         plot_model(model, to_file=self.output_dir + '/model.png', show_shapes=True)
         return model
 
     def _build_model_006(self):
         model = tf.keras.models.Sequential()
         state_shape = self.env.observation_space.shape
-        model.add(Dense(150, input_shape=state_shape, activation=LeakyReLU()))
-        model.add(Dense(120, activation=LeakyReLU()))
-        model.add(Dense(self.action_size, activation='linear'))
-        loss = tf.keras.losses.Huber()
-        model.compile(loss=loss, optimizer=Adam(lr=self.learning_rate), metrics=['mse'])
-        plot_model(model, to_file=self.output_dir + '/model.png', show_shapes=True)
-        return model
-
-    def _build_model_007(self):
-        model = tf.keras.models.Sequential()
-        state_shape = self.env.observation_space.shape
-        model.add(Dense(150, input_shape=state_shape, activation=LeakyReLU()))
-        model.add(Dense(120, activation=LeakyReLU()))
+        model.add(Dense(300, input_shape=state_shape, activation=LeakyReLU()))
+        model.add(Dense(240, activation=LeakyReLU()))
         model.add(Dense(self.action_size, activation='linear'))
         loss = tf.keras.losses.Huber()
         model.compile(loss=loss, optimizer=Adam(lr=self.learning_rate), metrics=['mse', 'mae'])

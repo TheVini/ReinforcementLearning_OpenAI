@@ -1,0 +1,308 @@
+Agent info:
+	Batch size: 64
+	Epoch(s): 1
+	Memory length: None
+	Gamma: 0.99
+	Epsilon decay: 0.99
+	Replay: 002
+	Success Margin: -150
+	Action Type: Simple Action
+
+Episode: 1/400, rounds: 61, epsilon: 1.0, score: -138.1, reward: -100, elapsed time: 0:00:00
+Episode: 2/400, rounds: 59, epsilon: 0.99, score: -271.8, reward: -100, elapsed time: 0:00:02
+Episode: 3/400, rounds: 68, epsilon: 0.9801, score: -239.3, reward: -100, elapsed time: 0:00:04
+Episode: 4/400, rounds: 67, epsilon: 0.9703, score: -474.2, reward: -100, elapsed time: 0:00:06
+Episode: 5/400, rounds: 56, epsilon: 0.9606, score: -118.0, reward: -100, elapsed time: 0:00:08
+Episode: 6/400, rounds: 86, epsilon: 0.951, score: -342.3, reward: -100, elapsed time: 0:00:11
+Episode: 7/400, rounds: 83, epsilon: 0.9415, score: -129.9, reward: -100, elapsed time: 0:00:14
+Episode: 8/400, rounds: 78, epsilon: 0.9321, score: -115.5, reward: -100, elapsed time: 0:00:16
+Episode: 9/400, rounds: 71, epsilon: 0.9227, score: -142.1, reward: -100, elapsed time: 0:00:19
+Episode: 10/400, rounds: 56, epsilon: 0.9135, score: -126.8, reward: -100, elapsed time: 0:00:21
+Episode: 11/400, rounds: 65, epsilon: 0.9044, score: -131.4, reward: -100, elapsed time: 0:00:23
+Episode: 12/400, rounds: 91, epsilon: 0.8953, score: -21.56, reward: -100, elapsed time: 0:00:26
+Episode: 13/400, rounds: 77, epsilon: 0.8864, score: -115.9, reward: -100, elapsed time: 0:00:28
+Episode: 14/400, rounds: 66, epsilon: 0.8775, score: -122.6, reward: -100, elapsed time: 0:00:31
+Episode: 15/400, rounds: 86, epsilon: 0.8687, score: -138.4, reward: -100, elapsed time: 0:00:33
+Episode: 16/400, rounds: 53, epsilon: 0.8601, score: -107.1, reward: -100, elapsed time: 0:00:35
+Episode: 17/400, rounds: 53, epsilon: 0.8515, score: -129.0, reward: -100, elapsed time: 0:00:37
+Episode: 18/400, rounds: 77, epsilon: 0.8429, score: -136.9, reward: -100, elapsed time: 0:00:40
+Episode: 19/400, rounds: 52, epsilon: 0.8345, score: -96.0, reward: -100, elapsed time: 0:00:42
+Episode: 20/400, rounds: 63, epsilon: 0.8262, score: -143.7, reward: -100, elapsed time: 0:00:44
+Episode: 21/400, rounds: 80, epsilon: 0.8179, score: -157.5, reward: -100, elapsed time: 0:00:47
+Episode: 22/400, rounds: 65, epsilon: 0.8097, score: -115.6, reward: -100, elapsed time: 0:00:49
+Episode: 23/400, rounds: 90, epsilon: 0.8016, score: -117.3, reward: -100, elapsed time: 0:00:52
+Episode: 24/400, rounds: 87, epsilon: 0.7936, score: -536.8, reward: -100, elapsed time: 0:00:55
+Episode: 25/400, rounds: 58, epsilon: 0.7857, score: -165.7, reward: -100, elapsed time: 0:00:57
+Episode: 26/400, rounds: 84, epsilon: 0.7778, score: -233.7, reward: -100, elapsed time: 0:01:00
+Episode: 27/400, rounds: 52, epsilon: 0.77, score: -132.0, reward: -100, elapsed time: 0:01:02
+Episode: 28/400, rounds: 49, epsilon: 0.7623, score: -114.3, reward: -100, elapsed time: 0:01:04
+Episode: 29/400, rounds: 59, epsilon: 0.7547, score: -176.0, reward: -100, elapsed time: 0:01:06
+Episode: 30/400, rounds: 61, epsilon: 0.7472, score: -127.9, reward: -100, elapsed time: 0:01:09
+Episode: 31/400, rounds: 73, epsilon: 0.7397, score: -165.0, reward: -100, elapsed time: 0:01:11
+Episode: 32/400, rounds: 191, epsilon: 0.7323, score: -330.4, reward: -100, elapsed time: 0:01:17
+Episode: 33/400, rounds: 87, epsilon: 0.725, score: -238.0, reward: -100, elapsed time: 0:01:20
+Episode: 34/400, rounds: 66, epsilon: 0.7177, score: -180.6, reward: -100, elapsed time: 0:01:23
+Episode: 35/400, rounds: 73, epsilon: 0.7106, score: -145.9, reward: -100, elapsed time: 0:01:25
+Episode: 36/400, rounds: 63, epsilon: 0.7034, score: -190.4, reward: -100, elapsed time: 0:01:28
+Episode: 37/400, rounds: 60, epsilon: 0.6964, score: -77.65, reward: -100, elapsed time: 0:01:30
+Episode: 38/400, rounds: 77, epsilon: 0.6894, score: -110.1, reward: -100, elapsed time: 0:01:32
+Episode: 39/400, rounds: 54, epsilon: 0.6826, score: -124.9, reward: -100, elapsed time: 0:01:35
+Episode: 40/400, rounds: 76, epsilon: 0.6757, score: -182.3, reward: -100, elapsed time: 0:01:37
+Episode: 41/400, rounds: 90, epsilon: 0.669, score: -553.2, reward: -100, elapsed time: 0:01:41
+Episode: 42/400, rounds: 95, epsilon: 0.6623, score: -276.5, reward: -100, elapsed time: 0:01:44
+Episode: 43/400, rounds: 54, epsilon: 0.6557, score: -135.8, reward: -100, elapsed time: 0:01:46
+Episode: 44/400, rounds: 61, epsilon: 0.6491, score: -20.52, reward: -100, elapsed time: 0:01:48
+Episode: 45/400, rounds: 74, epsilon: 0.6426, score: -119.9, reward: -100, elapsed time: 0:01:51
+Episode: 46/400, rounds: 52, epsilon: 0.6362, score: -73.8, reward: -100, elapsed time: 0:01:53
+Episode: 47/400, rounds: 62, epsilon: 0.6298, score: -165.8, reward: -100, elapsed time: 0:01:56
+Episode: 48/400, rounds: 67, epsilon: 0.6235, score: -52.41, reward: -100, elapsed time: 0:01:59
+Episode: 49/400, rounds: 78, epsilon: 0.6173, score: -286.0, reward: -100, elapsed time: 0:02:01
+Episode: 50/400, rounds: 67, epsilon: 0.6111, score: -83.22, reward: -100, elapsed time: 0:02:04
+Episode: 51/400, rounds: 90, epsilon: 0.605, score: -112.7, reward: -100, elapsed time: 0:02:07
+Episode: 52/400, rounds: 98, epsilon: 0.599, score: -106.2, reward: -100, elapsed time: 0:02:11
+Episode: 53/400, rounds: 81, epsilon: 0.593, score: -88.43, reward: -100, elapsed time: 0:02:14
+Episode: 54/400, rounds: 104, epsilon: 0.587, score: -66.96, reward: -100, elapsed time: 0:02:17
+Episode: 55/400, rounds: 77, epsilon: 0.5812, score: -135.2, reward: -100, elapsed time: 0:02:20
+Episode: 56/400, rounds: 117, epsilon: 0.5754, score: -89.53, reward: -100, elapsed time: 0:02:25
+Episode: 57/400, rounds: 107, epsilon: 0.5696, score: -393.7, reward: -100, elapsed time: 0:02:29
+Episode: 58/400, rounds: 129, epsilon: 0.5639, score: -158.7, reward: -100, elapsed time: 0:02:33
+Episode: 59/400, rounds: 65, epsilon: 0.5583, score: -142.1, reward: -100, elapsed time: 0:02:36
+Episode: 60/400, rounds: 76, epsilon: 0.5527, score: -108.3, reward: -100, elapsed time: 0:02:39
+Episode: 61/400, rounds: 136, epsilon: 0.5472, score: -58.43, reward: -100, elapsed time: 0:02:44
+Episode: 62/400, rounds: 151, epsilon: 0.5417, score: -22.63, reward: -100, elapsed time: 0:02:49
+Episode: 63/400, rounds: 74, epsilon: 0.5363, score: -22.68, reward: -100, elapsed time: 0:02:53
+Episode: 64/400, rounds: 74, epsilon: 0.5309, score: -84.4, reward: -100, elapsed time: 0:02:56
+Episode: 65/400, rounds: 169, epsilon: 0.5256, score: -13.04, reward: -100, elapsed time: 0:03:01
+Episode: 66/400, rounds: 141, epsilon: 0.5203, score: -93.41, reward: -100, elapsed time: 0:03:06
+Episode: 67/400, rounds: 149, epsilon: 0.5151, score: -158.9, reward: -100, elapsed time: 0:03:12
+Episode: 68/400, rounds: 152, epsilon: 0.51, score: 18.58, reward: -100, elapsed time: 0:03:18
+Episode: 69/400, rounds: 339, epsilon: 0.5049, score: -61.59, reward: -100, elapsed time: 0:03:30
+Episode: 70/400, rounds: 427, epsilon: 0.4998, score: 181.7, reward: 100, elapsed time: 0:03:45
+Episode: 71/400, rounds: 214, epsilon: 0.4948, score: 48.02, reward: -100, elapsed time: 0:03:53
+Episode: 72/400, rounds: 229, epsilon: 0.4899, score: -79.43, reward: -100, elapsed time: 0:04:01
+Episode: 73/400, rounds: 558, epsilon: 0.485, score: -104.6, reward: -100, elapsed time: 0:04:21
+Episode: 74/400, rounds: 999, epsilon: 0.4801, score: -38.24, reward: 1.0598885893963341, elapsed time: 0:04:55
+Episode: 75/400, rounds: 159, epsilon: 0.4753, score: -114.8, reward: -100, elapsed time: 0:05:01
+Episode: 76/400, rounds: 269, epsilon: 0.4706, score: -64.4, reward: -100, elapsed time: 0:05:11
+Episode: 77/400, rounds: 269, epsilon: 0.4659, score: -59.12, reward: -100, elapsed time: 0:05:21
+Episode: 78/400, rounds: 513, epsilon: 0.4612, score: 169.0, reward: 100, elapsed time: -1 day, 0:05:39
+Episode: 79/400, rounds: 960, epsilon: 0.4566, score: 103.0, reward: 100, elapsed time: -1 day, 0:06:16
+Episode: 80/400, rounds: 999, epsilon: 0.452, score: 85.7, reward: -0.5099473563973393, elapsed time: -1 day, 0:06:51
+Episode: 81/400, rounds: 118, epsilon: 0.4475, score: -195.1, reward: -100, elapsed time: -1 day, 0:06:56
+Episode: 82/400, rounds: 240, epsilon: 0.443, score: -10.8, reward: -100, elapsed time: -1 day, 0:07:05
+Episode: 83/400, rounds: 137, epsilon: 0.4386, score: -42.66, reward: -100, elapsed time: -1 day, 0:07:10
+Episode: 84/400, rounds: 150, epsilon: 0.4342, score: -93.87, reward: -100, elapsed time: -1 day, 0:07:16
+Episode: 85/400, rounds: 223, epsilon: 0.4299, score: -12.91, reward: -100, elapsed time: -1 day, 0:07:25
+Episode: 86/400, rounds: 199, epsilon: 0.4256, score: 6.056, reward: -100, elapsed time: -1 day, 0:07:32
+Episode: 87/400, rounds: 239, epsilon: 0.4213, score: -28.32, reward: -100, elapsed time: -1 day, 0:07:41
+Episode: 88/400, rounds: 226, epsilon: 0.4171, score: -17.61, reward: -100, elapsed time: -1 day, 0:07:48
+Episode: 89/400, rounds: 141, epsilon: 0.4129, score: 15.19, reward: -100, elapsed time: -1 day, 0:07:53
+Episode: 90/400, rounds: 322, epsilon: 0.4088, score: 32.36, reward: -100, elapsed time: -1 day, 0:08:04
+Episode: 91/400, rounds: 284, epsilon: 0.4047, score: -84.28, reward: -100, elapsed time: -1 day, 0:08:14
+Episode: 92/400, rounds: 368, epsilon: 0.4007, score: 7.616, reward: -100, elapsed time: -1 day, 0:08:27
+Episode: 93/400, rounds: 247, epsilon: 0.3967, score: -45.4, reward: -100, elapsed time: -1 day, 0:08:35
+Episode: 94/400, rounds: 503, epsilon: 0.3927, score: 155.7, reward: 100, elapsed time: -1 day, 0:08:52
+Episode: 95/400, rounds: 999, epsilon: 0.3888, score: -69.3, reward: 2.5434205117277005, elapsed time: -1 day, 0:09:26
+Episode: 96/400, rounds: 999, epsilon: 0.3849, score: -22.25, reward: -1.3126672545357494, elapsed time: -1 day, 0:09:59
+Episode: 97/400, rounds: 999, epsilon: 0.381, score: -24.89, reward: 2.350913417229279, elapsed time: -1 day, 0:10:33
+Episode: 98/400, rounds: 999, epsilon: 0.3772, score: -68.29, reward: 0.5230113724700771, elapsed time: -1 day, 0:11:07
+Episode: 99/400, rounds: 999, epsilon: 0.3735, score: -32.97, reward: -1.1145472660252977, elapsed time: -1 day, 0:11:41
+Episode: 100/400, rounds: 999, epsilon: 0.3697, score: -54.42, reward: -0.7876170293898739, elapsed time: -1 day, 0:12:14
+Episode: 101/400, rounds: 999, epsilon: 0.366, score: -18.98, reward: -1.9025857259253585, elapsed time: -1 day, 0:12:49
+Episode: 102/400, rounds: 999, epsilon: 0.3624, score: 6.273, reward: 2.6066663905609575, elapsed time: -1 day, 0:13:22
+Episode: 103/400, rounds: 999, epsilon: 0.3587, score: -57.63, reward: -2.5497169483902793, elapsed time: -1 day, 0:13:57
+Episode: 104/400, rounds: 346, epsilon: 0.3552, score: -18.39, reward: -100, elapsed time: -1 day, 0:14:09
+Episode: 105/400, rounds: 999, epsilon: 0.3516, score: 74.2, reward: -0.7797105803702802, elapsed time: -1 day, 0:14:44
+Episode: 106/400, rounds: 999, epsilon: 0.3481, score: 14.97, reward: 0.6924676222030126, elapsed time: -1 day, 0:15:19
+Episode: 107/400, rounds: 999, epsilon: 0.3446, score: 38.22, reward: -0.3720245200815089, elapsed time: -1 day, 0:15:55
+Episode: 108/400, rounds: 999, epsilon: 0.3412, score: -47.81, reward: -1.5462127603465703, elapsed time: -1 day, 0:16:32
+Episode: 109/400, rounds: 999, epsilon: 0.3378, score: 84.2, reward: 0.907675750793753, elapsed time: -1 day, 0:17:10
+Episode: 110/400, rounds: 999, epsilon: 0.3344, score: 10.93, reward: 2.982027653131732, elapsed time: -1 day, 0:17:47
+Episode: 111/400, rounds: 999, epsilon: 0.331, score: 72.2, reward: -0.6735479818780845, elapsed time: -1 day, 0:18:25
+Episode: 112/400, rounds: 272, epsilon: 0.3277, score: -19.85, reward: -100, elapsed time: -1 day, 0:18:35
+Episode: 113/400, rounds: 999, epsilon: 0.3244, score: 23.83, reward: -0.3293669101557757, elapsed time: -1 day, 0:19:13
+Episode: 114/400, rounds: 999, epsilon: 0.3212, score: 43.58, reward: -0.37470608955488305, elapsed time: -1 day, 0:19:52
+Episode: 115/400, rounds: 999, epsilon: 0.318, score: 90.06, reward: 1.3351836208272883, elapsed time: -1 day, 0:20:31
+Episode: 116/400, rounds: 999, epsilon: 0.3148, score: -29.5, reward: -2.253326699108398, elapsed time: -1 day, 0:21:10
+Episode: 117/400, rounds: 999, epsilon: 0.3117, score: 1.661, reward: -1.2829231362615368, elapsed time: -1 day, 0:21:49
+Episode: 118/400, rounds: 999, epsilon: 0.3085, score: 89.88, reward: 0.23277433992509103, elapsed time: -1 day, 0:22:28
+Episode: 119/400, rounds: 999, epsilon: 0.3055, score: -44.87, reward: 1.7171643747139853, elapsed time: -1 day, 0:23:07
+Episode: 120/400, rounds: 999, epsilon: 0.3024, score: 9.805, reward: -2.3225501472711105, elapsed time: -1 day, 0:23:45
+Episode: 121/400, rounds: 999, epsilon: 0.2994, score: -27.53, reward: 3.270440518381034, elapsed time: -1 day, 0:24:25
+Episode: 122/400, rounds: 999, epsilon: 0.2964, score: -17.58, reward: -1.5473714293235006, elapsed time: -1 day, 0:25:05
+Episode: 123/400, rounds: 426, epsilon: 0.2934, score: -37.76, reward: -100, elapsed time: -1 day, 0:25:22
+Episode: 124/400, rounds: 999, epsilon: 0.2905, score: -20.24, reward: -0.41426833256076917, elapsed time: -1 day, 0:26:04
+Episode: 125/400, rounds: 999, epsilon: 0.2876, score: -37.24, reward: -0.892788277333284, elapsed time: -1 day, 0:26:43
+Episode: 126/400, rounds: 999, epsilon: 0.2847, score: -8.802, reward: 2.5305427955636803, elapsed time: -1 day, 0:27:23
+Episode: 127/400, rounds: 999, epsilon: 0.2819, score: -28.69, reward: -3.4992602283878282, elapsed time: -1 day, 0:28:02
+Episode: 128/400, rounds: 999, epsilon: 0.279, score: 1.355, reward: -2.2500848310434023, elapsed time: -1 day, 0:28:42
+Episode: 129/400, rounds: 999, epsilon: 0.2763, score: 10.32, reward: 0.5950035212052682, elapsed time: -1 day, 0:29:20
+Episode: 130/400, rounds: 999, epsilon: 0.2735, score: 41.75, reward: -0.45853235110468193, elapsed time: -1 day, 0:29:59
+Episode: 131/400, rounds: 999, epsilon: 0.2708, score: -0.7753, reward: -1.9053988911735782, elapsed time: -1 day, 0:30:40
+Episode: 132/400, rounds: 999, epsilon: 0.268, score: -21.95, reward: 1.5119382032757158, elapsed time: -1 day, 0:31:20
+Episode: 133/400, rounds: 999, epsilon: 0.2654, score: -13.4, reward: -0.31880051103251644, elapsed time: -1 day, 0:31:59
+Episode: 134/400, rounds: 999, epsilon: 0.2627, score: -14.64, reward: 0.15364492479766767, elapsed time: -1 day, 0:32:39
+Episode: 135/400, rounds: 999, epsilon: 0.2601, score: 0.1207, reward: -2.2055483043801267, elapsed time: -1 day, 0:33:19
+Episode: 136/400, rounds: 999, epsilon: 0.2575, score: 0.1662, reward: 0.990996587801547, elapsed time: -1 day, 0:33:59
+Episode: 137/400, rounds: 999, epsilon: 0.2549, score: -39.69, reward: -2.3204725094519345, elapsed time: -1 day, 0:34:38
+Episode: 138/400, rounds: 999, epsilon: 0.2524, score: 17.86, reward: 1.6792701660614917, elapsed time: -1 day, 0:35:18
+Episode: 139/400, rounds: 999, epsilon: 0.2498, score: -9.09, reward: 1.4120168182112665, elapsed time: -1 day, 0:35:57
+Episode: 140/400, rounds: 999, epsilon: 0.2473, score: 25.85, reward: -9.645789208428727, elapsed time: -1 day, 0:36:36
+Episode: 141/400, rounds: 999, epsilon: 0.2449, score: -40.05, reward: -1.482806042019078, elapsed time: -1 day, 0:37:16
+Episode: 142/400, rounds: 823, epsilon: 0.2424, score: -440.3, reward: -100, elapsed time: -1 day, 0:37:49
+Episode: 143/400, rounds: 889, epsilon: 0.24, score: 149.5, reward: 100, elapsed time: -1 day, 0:38:24
+Episode: 144/400, rounds: 491, epsilon: 0.2376, score: -154.8, reward: -100, elapsed time: -1 day, 0:38:44
+Episode: 145/400, rounds: 306, epsilon: 0.2352, score: -263.9, reward: -100, elapsed time: -1 day, 0:38:56
+Episode: 146/400, rounds: 999, epsilon: 0.2329, score: -61.75, reward: 0.7994232364453506, elapsed time: -1 day, 0:39:35
+Episode: 147/400, rounds: 999, epsilon: 0.2305, score: 97.99, reward: -0.4232278289457223, elapsed time: -1 day, 0:40:15
+Episode: 148/400, rounds: 284, epsilon: 0.2282, score: 233.0, reward: 100, elapsed time: -1 day, 0:40:27
+Episode: 149/400, rounds: 221, epsilon: 0.2259, score: -144.6, reward: -100, elapsed time: -1 day, 0:40:36
+Episode: 150/400, rounds: 354, epsilon: 0.2237, score: -141.6, reward: -100, elapsed time: -1 day, 0:40:50
+Episode: 151/400, rounds: 999, epsilon: 0.2215, score: 68.54, reward: -0.5429674995700615, elapsed time: -1 day, 0:41:31
+Episode: 152/400, rounds: 542, epsilon: 0.2192, score: -156.8, reward: -100, elapsed time: -1 day, 0:41:52
+Episode: 153/400, rounds: 882, epsilon: 0.217, score: -109.4, reward: -100, elapsed time: -1 day, 0:42:28
+Episode: 154/400, rounds: 999, epsilon: 0.2149, score: 6.907, reward: -0.06346166253077598, elapsed time: -1 day, 0:43:09
+Episode: 155/400, rounds: 999, epsilon: 0.2127, score: -46.21, reward: 2.7995213977646833, elapsed time: -1 day, 0:43:49
+Episode: 156/400, rounds: 399, epsilon: 0.2106, score: -496.7, reward: -100, elapsed time: -1 day, 0:44:05
+Episode: 157/400, rounds: 999, epsilon: 0.2085, score: -33.66, reward: 1.7643676678326414, elapsed time: -1 day, 0:44:46
+Episode: 158/400, rounds: 999, epsilon: 0.2064, score: -14.85, reward: 1.8286703222211937, elapsed time: -1 day, 0:45:27
+Episode: 159/400, rounds: 95, epsilon: 0.2043, score: -89.29, reward: -100, elapsed time: -1 day, 0:45:31
+Episode: 160/400, rounds: 999, epsilon: 0.2023, score: 62.52, reward: -0.9807187958421071, elapsed time: -1 day, 0:46:13
+Episode: 161/400, rounds: 999, epsilon: 0.2003, score: 43.58, reward: 0.7471098321917264, elapsed time: -1 day, 0:46:55
+Episode: 162/400, rounds: 734, epsilon: 0.1983, score: -122.5, reward: -100, elapsed time: -1 day, 0:47:27
+Episode: 163/400, rounds: 702, epsilon: 0.1963, score: -87.93, reward: -100, elapsed time: -1 day, 0:47:56
+Episode: 164/400, rounds: 90, epsilon: 0.1943, score: -79.1, reward: -100, elapsed time: -1 day, 0:48:01
+Episode: 165/400, rounds: 999, epsilon: 0.1924, score: -28.58, reward: -1.515698352969898, elapsed time: -1 day, 0:48:43
+Episode: 166/400, rounds: 999, epsilon: 0.1905, score: -58.61, reward: -2.746174371212329, elapsed time: -1 day, 0:49:26
+Episode: 167/400, rounds: 999, epsilon: 0.1886, score: -22.25, reward: 1.1261316867486968, elapsed time: -1 day, 0:50:08
+Episode: 168/400, rounds: 999, epsilon: 0.1867, score: -29.36, reward: -0.8977535212546883, elapsed time: -1 day, 0:50:50
+Episode: 169/400, rounds: 809, epsilon: 0.1848, score: -229.4, reward: -100, elapsed time: -1 day, 0:51:23
+Episode: 170/400, rounds: 445, epsilon: 0.183, score: -130.7, reward: -100, elapsed time: -1 day, 0:51:42
+Episode: 171/400, rounds: 507, epsilon: 0.1811, score: -218.9, reward: -100, elapsed time: -1 day, 0:52:04
+Episode: 172/400, rounds: 278, epsilon: 0.1793, score: -146.2, reward: -100, elapsed time: -1 day, 0:52:16
+Episode: 173/400, rounds: 537, epsilon: 0.1775, score: -61.89, reward: -100, elapsed time: -1 day, 0:52:38
+Episode: 174/400, rounds: 474, epsilon: 0.1757, score: -162.0, reward: -100, elapsed time: -1 day, 0:52:59
+Episode: 175/400, rounds: 821, epsilon: 0.174, score: -206.6, reward: -100, elapsed time: -1 day, 0:53:33
+Episode: 176/400, rounds: 100, epsilon: 0.1722, score: -8.888, reward: -100, elapsed time: -1 day, 0:53:38
+Episode: 177/400, rounds: 103, epsilon: 0.1705, score: 33.79, reward: -100, elapsed time: -1 day, 0:53:43
+Episode: 178/400, rounds: 961, epsilon: 0.1688, score: 102.7, reward: 100, elapsed time: -1 day, 0:54:24
+Episode: 179/400, rounds: 125, epsilon: 0.1671, score: 16.06, reward: -100, elapsed time: -1 day, 0:54:30
+Episode: 180/400, rounds: 98, epsilon: 0.1655, score: -13.96, reward: -100, elapsed time: -1 day, 0:54:34
+Episode: 181/400, rounds: 999, epsilon: 0.1638, score: -148.0, reward: -3.686370415502199, elapsed time: -1 day, 0:55:16
+Episode: 182/400, rounds: 116, epsilon: 0.1622, score: -8.192, reward: -100, elapsed time: -1 day, 0:55:22
+Episode: 183/400, rounds: 999, epsilon: 0.1605, score: 62.12, reward: 1.3354440038980695, elapsed time: -1 day, 0:56:05
+Episode: 184/400, rounds: 999, epsilon: 0.1589, score: -8.657, reward: 1.0271701227931203, elapsed time: -1 day, 0:56:47
+Episode: 185/400, rounds: 100, epsilon: 0.1574, score: -44.92, reward: -100, elapsed time: -1 day, 0:56:52
+Episode: 186/400, rounds: 999, epsilon: 0.1558, score: 1.189, reward: -2.3474723436624103, elapsed time: -1 day, 0:57:34
+Episode: 187/400, rounds: 999, epsilon: 0.1542, score: 16.68, reward: 1.4275073248937329, elapsed time: -1 day, 0:58:16
+Episode: 188/400, rounds: 952, epsilon: 0.1527, score: 82.01, reward: 100, elapsed time: -1 day, 0:58:55
+Episode: 189/400, rounds: 312, epsilon: 0.1512, score: -132.5, reward: -100, elapsed time: -1 day, 0:59:07
+Episode: 190/400, rounds: 999, epsilon: 0.1496, score: 17.92, reward: -0.17649478813859673, elapsed time: -1 day, 0:59:46
+Episode: 191/400, rounds: 999, epsilon: 0.1481, score: 5.011, reward: 1.2838880124426246, elapsed time: -1 day, 1:00:29
+Episode: 192/400, rounds: 704, epsilon: 0.1467, score: 147.1, reward: 100, elapsed time: -1 day, 1:00:59
+Episode: 193/400, rounds: 999, epsilon: 0.1452, score: -0.02799, reward: 0.22817356173785555, elapsed time: -1 day, 1:01:39
+Episode: 194/400, rounds: 999, epsilon: 0.1437, score: -5.986, reward: 0.30102698596328, elapsed time: -1 day, 1:02:21
+Episode: 195/400, rounds: 999, epsilon: 0.1423, score: -22.49, reward: -0.7012002189522548, elapsed time: -1 day, 1:03:04
+Episode: 196/400, rounds: 142, epsilon: 0.1409, score: 4.129, reward: -100, elapsed time: -1 day, 1:03:11
+Episode: 197/400, rounds: 999, epsilon: 0.1395, score: -39.74, reward: -0.34527913535103066, elapsed time: -1 day, 1:03:53
+Episode: 198/400, rounds: 999, epsilon: 0.1381, score: -18.01, reward: -2.5195737378769607, elapsed time: -1 day, 1:04:35
+Episode: 199/400, rounds: 110, epsilon: 0.1367, score: -145.8, reward: -100, elapsed time: -1 day, 1:04:40
+Episode: 200/400, rounds: 999, epsilon: 0.1353, score: -42.22, reward: 2.4952683342992485, elapsed time: -1 day, 1:05:21
+Episode: 201/400, rounds: 106, epsilon: 0.134, score: -41.0, reward: -100, elapsed time: -1 day, 1:05:26
+Episode: 202/400, rounds: 999, epsilon: 0.1326, score: -26.48, reward: 0.5382685418890294, elapsed time: -1 day, 1:06:07
+Episode: 203/400, rounds: 999, epsilon: 0.1313, score: -11.4, reward: 0.4538935149863441, elapsed time: -1 day, 1:06:49
+Episode: 204/400, rounds: 999, epsilon: 0.13, score: 9.046, reward: -1.9021912527887928, elapsed time: -1 day, 1:07:30
+Episode: 205/400, rounds: 107, epsilon: 0.1287, score: -139.6, reward: -100, elapsed time: -1 day, 1:07:36
+Episode: 206/400, rounds: 141, epsilon: 0.1274, score: 24.27, reward: -100, elapsed time: -1 day, 1:07:42
+Episode: 207/400, rounds: 150, epsilon: 0.1261, score: 44.89, reward: -100, elapsed time: -1 day, 1:07:49
+Episode: 208/400, rounds: 999, epsilon: 0.1249, score: -36.53, reward: 0.9057031767391521, elapsed time: -1 day, 1:08:31
+Episode: 209/400, rounds: 153, epsilon: 0.1236, score: 31.82, reward: -100, elapsed time: -1 day, 1:08:38
+Episode: 210/400, rounds: 600, epsilon: 0.1224, score: 151.8, reward: 100, elapsed time: -1 day, 1:09:03
+Episode: 211/400, rounds: 999, epsilon: 0.1212, score: -26.3, reward: 0.23252371428392252, elapsed time: -1 day, 1:09:44
+Episode: 212/400, rounds: 999, epsilon: 0.12, score: -48.29, reward: 0.467649556698845, elapsed time: -1 day, 1:10:26
+Episode: 213/400, rounds: 999, epsilon: 0.1188, score: -35.85, reward: -1.0754508786338122, elapsed time: -1 day, 1:11:08
+Episode: 214/400, rounds: 999, epsilon: 0.1176, score: -12.86, reward: -0.3016341723873157, elapsed time: -1 day, 1:11:50
+Episode: 215/400, rounds: 999, epsilon: 0.1164, score: -26.4, reward: -1.4398017178991822, elapsed time: -1 day, 1:12:32
+Episode: 216/400, rounds: 999, epsilon: 0.1152, score: 0.7153, reward: -3.6947504995277383, elapsed time: -1 day, 1:13:14
+Episode: 217/400, rounds: 999, epsilon: 0.1141, score: -64.62, reward: 0.7428950848545324, elapsed time: -1 day, 1:13:56
+Episode: 218/400, rounds: 999, epsilon: 0.1129, score: -1.611, reward: -1.740706163182395, elapsed time: -1 day, 1:14:37
+Episode: 219/400, rounds: 999, epsilon: 0.1118, score: 8.987, reward: 0.016222344605030525, elapsed time: -1 day, 1:15:18
+Episode: 220/400, rounds: 999, epsilon: 0.1107, score: -26.43, reward: -2.19159733316049, elapsed time: -1 day, 1:16:00
+Episode: 221/400, rounds: 999, epsilon: 0.1096, score: -18.43, reward: -2.743004580521638, elapsed time: -1 day, 1:16:42
+Episode: 222/400, rounds: 999, epsilon: 0.1085, score: -48.46, reward: -2.9833515321675876, elapsed time: -1 day, 1:17:23
+Episode: 223/400, rounds: 999, epsilon: 0.1074, score: 26.81, reward: -0.005019694893845211, elapsed time: -1 day, 1:18:06
+Episode: 224/400, rounds: 999, epsilon: 0.1063, score: -5.721, reward: 0.7405308107195949, elapsed time: -1 day, 1:18:47
+Episode: 225/400, rounds: 999, epsilon: 0.1053, score: 5.016, reward: 0.2698538742505232, elapsed time: -1 day, 1:19:29
+Episode: 226/400, rounds: 999, epsilon: 0.1042, score: 54.66, reward: 1.3326020878420206, elapsed time: -1 day, 1:20:12
+Episode: 227/400, rounds: 999, epsilon: 0.1032, score: 18.61, reward: -0.9887128109925019, elapsed time: -1 day, 1:20:53
+Episode: 228/400, rounds: 158, epsilon: 0.1021, score: 14.58, reward: -100, elapsed time: -1 day, 1:21:00
+Episode: 229/400, rounds: 99, epsilon: 0.1011, score: 59.36, reward: -100, elapsed time: -1 day, 1:21:05
+Episode: 230/400, rounds: 425, epsilon: 0.1001, score: 18.14, reward: -100, elapsed time: -1 day, 1:21:23
+Episode: 231/400, rounds: 385, epsilon: 0.0991, score: -66.06, reward: -100, elapsed time: -1 day, 1:21:39
+Episode: 232/400, rounds: 999, epsilon: 0.09811, score: 129.9, reward: -0.2569313276606511, elapsed time: -1 day, 1:22:21
+Episode: 233/400, rounds: 155, epsilon: 0.09713, score: -52.32, reward: -100, elapsed time: -1 day, 1:22:29
+Episode: 234/400, rounds: 107, epsilon: 0.09616, score: -60.32, reward: -100, elapsed time: -1 day, 1:22:34
+Episode: 235/400, rounds: 106, epsilon: 0.0952, score: -77.66, reward: -100, elapsed time: -1 day, 1:22:39
+Episode: 236/400, rounds: 198, epsilon: 0.09425, score: -19.64, reward: -100, elapsed time: -1 day, 1:22:48
+Episode: 237/400, rounds: 999, epsilon: 0.09331, score: 75.56, reward: -3.55961582589251, elapsed time: -1 day, 1:23:29
+Episode: 238/400, rounds: 999, epsilon: 0.09237, score: -13.19, reward: 0.06853093715939565, elapsed time: -1 day, 1:24:12
+Episode: 239/400, rounds: 292, epsilon: 0.09145, score: -97.76, reward: -100, elapsed time: -1 day, 1:24:24
+Episode: 240/400, rounds: 999, epsilon: 0.09053, score: 2.274, reward: 0.2504103222733843, elapsed time: -1 day, 1:25:07
+Episode: 241/400, rounds: 999, epsilon: 0.08963, score: -71.71, reward: -1.8238686013462413, elapsed time: -1 day, 1:25:49
+Episode: 242/400, rounds: 999, epsilon: 0.08873, score: 18.47, reward: -0.03423283610082592, elapsed time: -1 day, 1:26:32
+Episode: 243/400, rounds: 999, epsilon: 0.08785, score: -83.84, reward: 0.8293786446463411, elapsed time: -1 day, 1:27:14
+Episode: 244/400, rounds: 999, epsilon: 0.08697, score: -28.61, reward: -3.197013880005257, elapsed time: -1 day, 1:27:56
+Episode: 245/400, rounds: 599, epsilon: 0.0861, score: -157.7, reward: -100, elapsed time: -1 day, 1:28:22
+Episode: 246/400, rounds: 116, epsilon: 0.08524, score: -11.5, reward: -100, elapsed time: -1 day, 1:28:28
+Episode: 247/400, rounds: 999, epsilon: 0.08438, score: -7.302, reward: -2.660624288753108, elapsed time: -1 day, 1:29:10
+Episode: 248/400, rounds: 999, epsilon: 0.08354, score: -103.7, reward: 0.9736619720338495, elapsed time: -1 day, 1:29:53
+Episode: 249/400, rounds: 230, epsilon: 0.0827, score: 217.8, reward: 100, elapsed time: -1 day, 1:30:03
+Episode: 250/400, rounds: 999, epsilon: 0.08188, score: -35.6, reward: -0.22760106469090033, elapsed time: -1 day, 1:30:46
+Episode: 251/400, rounds: 999, epsilon: 0.08106, score: -47.34, reward: 1.5466694937936125, elapsed time: -1 day, 1:31:29
+Episode: 252/400, rounds: 999, epsilon: 0.08025, score: -35.04, reward: 1.2227985241153732, elapsed time: -1 day, 1:32:12
+Episode: 253/400, rounds: 999, epsilon: 0.07945, score: -20.12, reward: -0.47661995842307475, elapsed time: -1 day, 1:32:55
+Episode: 254/400, rounds: 999, epsilon: 0.07865, score: -31.5, reward: 1.9301634484514523, elapsed time: -1 day, 1:33:38
+Episode: 255/400, rounds: 999, epsilon: 0.07786, score: 10.41, reward: -1.54280322391579, elapsed time: -1 day, 1:34:21
+Episode: 256/400, rounds: 227, epsilon: 0.07709, score: 236.8, reward: 100, elapsed time: -1 day, 1:34:31
+Episode: 257/400, rounds: 999, epsilon: 0.07631, score: -30.88, reward: 2.5429811547427805, elapsed time: -1 day, 1:35:13
+Episode: 258/400, rounds: 999, epsilon: 0.07555, score: -77.01, reward: 1.0262653709820324, elapsed time: -1 day, 1:35:58
+Episode: 259/400, rounds: 151, epsilon: 0.0748, score: 30.25, reward: -100, elapsed time: -1 day, 1:36:05
+Episode: 260/400, rounds: 999, epsilon: 0.07405, score: -108.6, reward: -1.7712119097888877, elapsed time: -1 day, 1:36:47
+Episode: 261/400, rounds: 905, epsilon: 0.07331, score: -187.4, reward: -100, elapsed time: -1 day, 1:37:26
+Episode: 262/400, rounds: 893, epsilon: 0.07257, score: -249.2, reward: -100, elapsed time: -1 day, 1:38:05
+Episode: 263/400, rounds: 999, epsilon: 0.07185, score: -87.32, reward: 0.47707619744511587, elapsed time: -1 day, 1:38:48
+Episode: 264/400, rounds: 999, epsilon: 0.07113, score: -68.06, reward: 0.9235167744250543, elapsed time: -1 day, 1:39:31
+Episode: 265/400, rounds: 999, epsilon: 0.07042, score: 5.359, reward: -0.6141033730208136, elapsed time: -1 day, 1:40:16
+Episode: 266/400, rounds: 999, epsilon: 0.06972, score: -22.54, reward: -1.2408105049795382, elapsed time: -1 day, 1:41:00
+Episode: 267/400, rounds: 999, epsilon: 0.06902, score: -47.92, reward: -2.817189754607969, elapsed time: -1 day, 1:41:44
+Episode: 268/400, rounds: 999, epsilon: 0.06833, score: -107.7, reward: 1.8638002439698482, elapsed time: -1 day, 1:42:28
+Episode: 269/400, rounds: 999, epsilon: 0.06764, score: -64.94, reward: -0.8288194404227085, elapsed time: -1 day, 1:43:10
+Episode: 270/400, rounds: 999, epsilon: 0.06697, score: -69.52, reward: -0.025965357593506155, elapsed time: -1 day, 1:43:54
+Episode: 271/400, rounds: 999, epsilon: 0.0663, score: 20.77, reward: -0.07459400410196679, elapsed time: -1 day, 1:44:38
+Episode: 272/400, rounds: 999, epsilon: 0.06564, score: -39.84, reward: -2.175526714807442, elapsed time: -1 day, 1:45:21
+Episode: 273/400, rounds: 999, epsilon: 0.06498, score: -41.52, reward: 2.079167151594477, elapsed time: -1 day, 1:46:05
+Episode: 274/400, rounds: 999, epsilon: 0.06433, score: -83.19, reward: 1.8695446969045235, elapsed time: -1 day, 1:46:48
+Episode: 275/400, rounds: 999, epsilon: 0.06369, score: -78.33, reward: -0.9263554352401968, elapsed time: -1 day, 1:47:32
+Episode: 276/400, rounds: 999, epsilon: 0.06305, score: 2.72, reward: -0.7923587697455048, elapsed time: -1 day, 1:48:16
+Episode: 277/400, rounds: 193, epsilon: 0.06242, score: 38.43, reward: -100, elapsed time: -1 day, 1:48:24
+Episode: 278/400, rounds: 999, epsilon: 0.06179, score: -19.95, reward: -0.08754499605950514, elapsed time: -1 day, 1:49:10
+Episode: 279/400, rounds: 999, epsilon: 0.06118, score: -60.87, reward: -10.835547465539433, elapsed time: -1 day, 1:49:53
+Episode: 280/400, rounds: 306, epsilon: 0.06056, score: -189.9, reward: -100, elapsed time: -1 day, 1:50:07
+Episode: 281/400, rounds: 999, epsilon: 0.05996, score: 36.25, reward: -0.1699099863565425, elapsed time: -1 day, 1:50:50
+Episode: 282/400, rounds: 352, epsilon: 0.05936, score: 174.9, reward: 100, elapsed time: -1 day, 1:51:06
+Episode: 283/400, rounds: 759, epsilon: 0.05877, score: -89.56, reward: -100, elapsed time: -1 day, 1:51:39
+Episode: 284/400, rounds: 999, epsilon: 0.05818, score: -58.14, reward: 2.3706770489250646, elapsed time: -1 day, 1:52:23
+Episode: 285/400, rounds: 999, epsilon: 0.0576, score: -26.63, reward: 1.4571572939672819, elapsed time: -1 day, 1:53:07
+Episode: 286/400, rounds: 999, epsilon: 0.05702, score: -43.17, reward: 1.0049465382182359, elapsed time: -1 day, 1:53:51
+Episode: 287/400, rounds: 999, epsilon: 0.05645, score: -23.29, reward: -0.8122474019328638, elapsed time: -1 day, 1:54:34
+Episode: 288/400, rounds: 999, epsilon: 0.05589, score: -13.42, reward: 0.19129687201429135, elapsed time: -1 day, 1:55:18
+Episode: 289/400, rounds: 999, epsilon: 0.05533, score: -89.75, reward: 0.2423034901477763, elapsed time: -1 day, 1:56:01
+Episode: 290/400, rounds: 537, epsilon: 0.05477, score: -304.3, reward: -100, elapsed time: -1 day, 1:56:25
+Episode: 291/400, rounds: 999, epsilon: 0.05423, score: 5.62, reward: -0.4963199495479273, elapsed time: -1 day, 1:57:10
+Episode: 292/400, rounds: 999, epsilon: 0.05368, score: -6.393, reward: 2.513735024204909, elapsed time: -1 day, 1:57:54
+Episode: 293/400, rounds: 999, epsilon: 0.05315, score: -13.21, reward: -2.394517816065181, elapsed time: -1 day, 1:58:38
+Episode: 294/400, rounds: 999, epsilon: 0.05262, score: 15.37, reward: -0.9509553674055227, elapsed time: -1 day, 1:59:22
+Episode: 295/400, rounds: 999, epsilon: 0.05209, score: -31.46, reward: -1.8692496361815358, elapsed time: -1 day, 2:00:06
+Episode: 296/400, rounds: 999, epsilon: 0.05157, score: -19.49, reward: -0.5666111162375103, elapsed time: -1 day, 2:00:51
+Episode: 297/400, rounds: 999, epsilon: 0.05105, score: -38.17, reward: 1.890385925663655, elapsed time: -1 day, 2:01:35
+Task was solved at episode 296
