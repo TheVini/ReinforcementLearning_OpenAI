@@ -13,4 +13,4 @@
 | Technique | Deep Q-Learning |
 | Smallest loss | 0.183936 (using Huber loss) |
 
-[![Alt text for your video](https://gym.openai.com/videos/2019-10-21--mqt8Qj1mwo/LunarLander-v2/poster.jpg)]
+![Alt text for your video](Gifs/lunarlander.gif)
