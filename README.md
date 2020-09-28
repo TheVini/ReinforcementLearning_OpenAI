@@ -15,7 +15,14 @@
 
 <p align="center">
 
-![Alt text for your video](Gifs/lunarlander.gif)
+  <img src="https://github.com/TheVini/DeepReinforcement_OpenAI/blob/master/Gifs/lunarlander.gif">
+  
+</p>
+
+
+<p align="center">
+
+   ![Alt text for your video](Gifs/lunarlander.gif)
 
 </p>
 
