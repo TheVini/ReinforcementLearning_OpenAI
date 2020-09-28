@@ -46,7 +46,7 @@
             <td align="center">
                 <img src="https://github.com/TheVini/DeepReinforcement_OpenAI/blob/master/Gifs/lunarlanderbefore.gif" width="300" height="200">
             </td>
-            <td align="center">
+            <td align="center"> 
                 <img src="https://github.com/TheVini/DeepReinforcement_OpenAI/blob/master/Gifs/lunarlanderafter.gif" width="300" height="200">
             </td>
         </tr>
