@@ -1,9 +1,3 @@
-<style>
-    table {
-      table-layout: fixed;
-    }
-</style>
-
 ## Computer and General Spec
 - CPU: i5-8400 (with Water Cooler)
 - RAM: 1x16 Gb 2133Mhz DDR4 
@@ -13,7 +7,7 @@
 
 #### [1. OpenAI Gym - LunarLander-v2](https://gym.openai.com/envs/LunarLander-v2/)
 
-<table>
+<table style="width: 100%;">
     <thead>
         <tr>
             <th>Topic</th>
@@ -40,7 +34,7 @@
     </tbody>
 </table>
 
-<table>
+<table style="width: 100%;">
     <thead>
         <tr>
             <th>Before</th>
