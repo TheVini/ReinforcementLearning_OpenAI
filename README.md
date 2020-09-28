@@ -5,7 +5,7 @@
 - Cuda 10.1
 - PyCharm as IDE
 
-### [OpenAI Gym - LunarLander-v2](https://gym.openai.com/envs/LunarLander-v2/)
+#### [1. OpenAI Gym - LunarLander-v2](https://gym.openai.com/envs/LunarLander-v2/)
 | Topic | Note |
 | :---:  | :---: |
 | Definition of solved | Average score of the last 150 episodes higher than 200 points. |
@@ -13,4 +13,11 @@
 | Technique | Deep Q-Learning |
 | Smallest loss | 0.183936 (using Huber loss) |
 
+<p align="center">
+
 ![Alt text for your video](Gifs/lunarlander.gif)
+
+</p>
+
+
+
