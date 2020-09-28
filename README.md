@@ -15,16 +15,6 @@
 
 <p align="center">
 
-  <img src="https://github.com/TheVini/DeepReinforcement_OpenAI/blob/master/Gifs/lunarlander.gif">
+  <img src="https://github.com/TheVini/DeepReinforcement_OpenAI/blob/master/Gifs/lunarlander.gif" width="500" height="300">
   
 </p>
-
-
-<p align="center">
-
-   ![Alt text for your video](Gifs/lunarlander.gif)
-
-</p>
-
-
-
