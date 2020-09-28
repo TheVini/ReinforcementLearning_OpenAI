@@ -6,9 +6,10 @@
 - PyCharm as IDE
 
 ## OpenAI Gym - Lunar Lander
-- Definition of solved: average score of the last 150 episodes higher than 200 points.
-- Duration: 1h 51m 28s
-- Hidden Layers: 24x48
-- Technique: Deep Q-Learning
-- Smallest loss: 0.183936 (using Huber loss) 
+| Topic | Note |
+| :---:  | :---: |
+| Definition of solved | Average score of the last 150 episodes higher than 200 points. |
+| Duration | 1h 51m 28s |
+| Technique | Deep Q-Learning |
+| Smallest loss | 0.183936 (using Huber loss) |
 
