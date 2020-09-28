@@ -7,8 +7,8 @@ n_episodes = 400
 duration = 7000
 replay = 2
 action = 1
-agent = VGBAgent.DQNAgent(replay=replay, action_type=action, batch_size=128, model_type=5, success_margin=250,
-                          record_video=False, target_model=True)
+agent = VGBAgent.DQNAgent(replay=replay, action_type=action, batch_size=128, model_type=4, success_margin=250,
+                          record_video=True, target_model=True)
 start = datetime.now().time().strftime('%H:%M:%S')
 
 for e in range(n_episodes):
