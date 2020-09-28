@@ -1,5 +1,5 @@
 from collections import deque
-from projectFiles import VGBModel, VGBUtils
+from Utils import VGBModel, VGBUtils
 from skimage import img_as_ubyte
 from skimage.transform import resize
 from enum import Enum

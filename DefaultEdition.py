@@ -2,16 +2,19 @@ import cv2, glob, os
 import numpy as np
 import matplotlib.pyplot as plt
 
+
 def calculate(frame, percent):
     width = int(frame.shape[1] * percent/ 100)
     height = int(frame.shape[0] * percent/ 100)
     return [width, height]
 
+
 def rescale_frame(frame, percent=75):
     width, height = calculate(frame, percent)
     #print("{} {}".format(width, height))
     dim = (width, height)
-    return cv2.resize(frame, dim, interpolation =cv2.INTER_AREA)
+    return cv2.resize(frame, dim, interpolation=cv2.INTER_AREA)
+
 
 def width_height(nome_video):
     cap = cv2.VideoCapture(nome_video)
@@ -19,6 +22,7 @@ def width_height(nome_video):
     width_out, height_out = calculate(frame, 50)
     cap.release()
     return [width_out, height_out]
+
 
 def tratar_video(nome_video):
     video_dir = "videos_editados"
@@ -64,10 +68,12 @@ def tratar_video(nome_video):
     cap.release()
     cv2.destroyAllWindows()
 
+
 def edit_videos():
     myvideolist = [f for f in glob.glob("videos_edicao/*.mp4")]
     for video in myvideolist:
         tratar_video(video)
+
 
 def create_black_image():
     #A customização do frame foi feita no site https://pixlr.com/x/
@@ -78,6 +84,7 @@ def create_black_image():
     cv2.imshow("Black Blank", blank_image)
     cv2.waitKey(0)
     cv2.destroyAllWindows()
+
 
 def gerar_video_inicial():
     fourcc = cv2.VideoWriter_fourcc(*'mp4v')
@@ -93,6 +100,7 @@ def gerar_video_inicial():
     for i in range(len(img_array)):
         out.write(img_array[i])
     out.release()
+
 
 #SpaceX - https://www.youtube.com/watch?v=l5I8jaMsHYk
 gerar_video_inicial()

@@ -1,4 +1,4 @@
-from projectFiles import VGBAgent, VGBUtils
+from Utils import VGBAgent, VGBUtils
 from datetime import datetime
 import numpy as np
 
