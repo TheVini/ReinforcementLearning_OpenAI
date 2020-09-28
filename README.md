@@ -46,13 +46,7 @@
             <td align="center">
                 <img src="https://github.com/TheVini/DeepReinforcement_OpenAI/blob/master/Gifs/lunarlander.gif" width="300" height="200">
             </td>
-            <td align="center">Average score of the last 150 episodes higher than 200 points.</td>
+            <td align="center">FALTA O GIF</td>
         </tr>
     </tbody>
 </table>
-
-<p align="center">
-
-  <img src="https://github.com/TheVini/DeepReinforcement_OpenAI/blob/master/Gifs/lunarlander.gif" width="300" height="200">
-  
-</p>
