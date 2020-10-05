@@ -1,9 +1,9 @@
 ## Computer and General Spec
 - CPU: i5-8400 (with Water Cooler)
 - RAM: 1x16 Gb 2133Mhz DDR4 
-- GeForce GTX 1060 6GB
-- Cuda 10.1
-- PyCharm as IDE
+- GPU: GeForce GTX 1060 6GB
+- Driver: Cuda 10.1
+- IDE: PyCharm 
 
 #### [1. OpenAI Gym - LunarLander-v2](https://gym.openai.com/envs/LunarLander-v2/)
 
@@ -25,7 +25,11 @@
         </tr>
         <tr>
             <td align="center">Technique</td>
-            <td align="center">Deep Q-Learning</td>
+            <td align="center">Deep Q-Learning (experience replay and target network)</td>
+        </tr>
+        <tr>
+            <td align="center">Action selector</td>
+            <td align="center">Epsilon greedy</td>
         </tr>
         <tr>
             <td align="center">Smallest loss</td>
@@ -73,7 +77,11 @@
         </tr>
         <tr>
             <td align="center">Technique</td>
-            <td align="center">Deep Q-Learning</td>
+            <td align="center">Deep Q-Learning (experience replay and target network)</td>
+        </tr>
+        <tr>
+            <td align="center">Action selector</td>
+            <td align="center">Epsilon greedy and Softmax</td>
         </tr>
         <tr>
             <td align="center">Smallest loss</td>
@@ -95,7 +103,7 @@
                 <img src="https://github.com/TheVini/DeepReinforcement_OpenAI/blob/master/Others/mountaincarbefore.gif" width="300" height="200">
             </td>
             <td align="center"> 
-                <img src="https://github.com/TheVini/DeepReinforcement_OpenAI/blob/master/Others/lunarlanderafter.gif" width="300" height="200">
+                <img src="https://github.com/TheVini/DeepReinforcement_OpenAI/blob/master/Others/mountaincarafter.gif" width="300" height="200">
             </td>
         </tr>
     </tbody>
