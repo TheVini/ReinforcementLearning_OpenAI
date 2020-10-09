@@ -3,7 +3,7 @@ from datetime import datetime
 import numpy as np
 
 '''
-agent = RandomAgentTest.RandomAgent(gym_env="MountainCar-v0")
+agent = RandomAgentTest.RandomAgent(gym_env="Acrobot-v1")
 agent.run()
 '''
 
@@ -45,4 +45,5 @@ for e in range(n_episodes):
     if agent.is_solved_up():
         success_text = f"Task was solved at episode {e}"
         Utils.log_info(agent.others_dir, success_text)
+        agent.test()
         break

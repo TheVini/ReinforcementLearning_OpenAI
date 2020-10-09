@@ -17,8 +17,8 @@ class RandomAgent:
         for i in range(1000):
             self.env.render()
             action = self.env.action_space.sample()
-            if i == 0:
-                print("Action example: ".format(action))
+            if i < 10:
+                print("Action example: {}".format(action))
             observation, reward, done, info = self.env.step(action)
 
             if done:

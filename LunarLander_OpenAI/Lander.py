@@ -6,8 +6,9 @@ import numpy as np
 n_episodes = 400
 duration = 7000
 action = 1
-agent = DQNAgent.DQNAgent(action_type=action, batch_size=128, model_type=4, success_margin=250,
-                          success_score=200, record_video=True, target_model=True)
+
+agent = DQNAgent.DQNAgent(action_type=action, batch_size=128, model_type=1, success_margin=150,
+                          success_score=200, record_video=False, target_model=True)
 start = datetime.now().time().strftime('%H:%M:%S')
 
 for e in range(n_episodes):
@@ -35,4 +36,5 @@ for e in range(n_episodes):
     if agent.is_solved_up():
         success_text = f"Task was solved at episode {e}"
         Utils.log_info(agent.others_dir, success_text)
+        agent.test()
         break

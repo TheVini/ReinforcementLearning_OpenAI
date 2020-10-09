@@ -59,7 +59,7 @@ class DQNAgent:
 
         general_info = 'Agent info:\n\tBatch size: {}\n\tEpoch(s): {}\n\t' \
                        'Memory length: {}\n\tGamma: {}\n\tEpsilon decay: {}\n\t' \
-                       'Success Margin: -{}\n\tAction Type: {}\n\tTarget model: {}\n'\
+                       'Success Margin: -{}\n\tAction Type: {}\n\tTarget model: {}\n' \
             .format(self.batch_size, self.epoch, self.memory.maxlen, self.gamma,
                     self.epsilon_decay, self.success_margin, self.actions_dict[self.action_type], self.target_model)
         Utils.log_info(self.others_dir, general_info)
@@ -153,6 +153,28 @@ class DQNAgent:
             return self._choose_take_simple_action(state)
         elif self.action_type == ActionTypeEnum.ComplexAction:
             return self._choose_take_complex_action(state)
+
+    def test(self, model_path=None):
+        if model_path is not None:
+            self.DLModel.load(model_path)
+        test_score_list = []
+        test_rounds = 100
+        for i in range(test_rounds):
+            score = 0.
+            state = self.env.reset()
+            state = np.reshape(state, [1, self.state_size])
+            while True:
+                act_values = self.DLModel.model.predict(state)[0]
+                next_state, reward, done, _ = self.env.step(np.argmax(act_values))
+                next_state = np.reshape(next_state, [1, self.state_size])
+                score += reward
+                state = next_state
+                if done:
+                    break
+            test_score_list.append(score)
+            score_text = "Progress: {}/{} | Score: {:.04f} | Avg. Score: {:.04f}".format(
+                (i + 1), test_rounds, score, np.mean(test_score_list))
+            Utils.test_log_info(self.others_dir, score_text)
 
     def train_during_episode(self):
         if len(self.memory) >= self.batch_size:

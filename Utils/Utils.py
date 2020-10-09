@@ -19,11 +19,17 @@ def softmax(x):
     return e_x / e_x.sum(axis=0)
 
 
-def log_info(dir_path, text):
+def log_info(dir_path, text, file='report.txt'):
     print(text)
-    with open(dir_path + '/report.txt', 'a+') as file:
+    with open(dir_path + '/' + file, 'a+') as file:
         file.write(text + '\n')
 
+
+def test_log_info(dir_path, text, file_number=None, file_name='test_report.txt'):
+    if file_number is not None:
+        file_name = 'test_report_{}.txt'.format(file_number)
+    log_info(dir_path, text, file=file_name)
+    
 
 def full_plot(ep_score, ep_losses, text, output_dir, batch_size=32):
     plot_score(ep_score, text, output_dir)
