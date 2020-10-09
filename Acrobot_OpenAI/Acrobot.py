@@ -3,7 +3,7 @@ from datetime import datetime
 import numpy as np
 
 '''
-agent = RandomAgentTest.RandomAgent(gym_env="Acrobot-v1")
+agent = RandomAgentTest.RandomAgent(gym_env="FetchPickAndPlace-v1")
 agent.run()
 '''
 

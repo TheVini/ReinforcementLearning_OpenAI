@@ -17,6 +17,10 @@
     </thead>
     <tbody>
         <tr>
+            <td align="center">Goal</td>
+            <td align="center">Landing the spaceship.</td>
+        </tr>
+        <tr>
             <td align="center">Definition of success</td>
             <td align="center">Average score of at least 200 points for the last 150 episodes.</td>
         </tr>
@@ -65,6 +69,10 @@
     </thead>
     <tbody>
         <tr>
+            <td align="center">Goal</td>
+            <td align="center">Climbing the mountain.</td>
+        </tr>
+        <tr>
             <td align="center">Definition of success</td>
             <td align="center">Average score of at least -110 points for the last 100 episodes.</td>
         </tr>
@@ -112,6 +120,10 @@
         </tr>
     </thead>
     <tbody>
+        <tr>
+            <td align="center">Goal</td>
+            <td align="center">Swinging the end of the lower link up to a given height (top line).</td>
+        </tr>
         <tr>
             <td align="center">Definition of success</td>
             <td align="center">Average score of at least -100 points for the last 150 episodes.</td>
