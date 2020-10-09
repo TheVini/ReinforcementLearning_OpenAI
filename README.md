@@ -102,7 +102,7 @@
     </tbody>
 </table>
 
-#### [2. OpenAI Gym - Acrobot-v1](https://gym.openai.com/envs/Acrobot-v1/)
+#### [3. OpenAI Gym - Acrobot-v1](https://gym.openai.com/envs/Acrobot-v1/)
 
 <table align="center">
     <thead>
