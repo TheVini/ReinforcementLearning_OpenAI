@@ -18,7 +18,7 @@ start = datetime.now().time().strftime('%H:%M:%S')
 for e in range(n_episodes):
     score = 0.
     state = agent.env.reset()
-    
+
     state = np.reshape(state, [1, agent.state_size])
 
     for time in range(duration):

@@ -5,6 +5,7 @@
 - Driver: Cuda 10.1
 - IDE: PyCharm 
 - OS: Ubuntu 20.04
+- Teste
 
 #### [1. OpenAI Gym - LunarLander-v2](https://gym.openai.com/envs/LunarLander-v2/)
 
