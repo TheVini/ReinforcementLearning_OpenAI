@@ -18,7 +18,7 @@ class DQNAgent:
     def __init__(self, action_type=1, batch_size=32,
                  model_type=1, success_margin=150, success_score=200,
                  action_size=None, memory_size=None, record_video=False, target_model=False,
-                 algorithm='dqn', gym_env='LunarLander-v2', project='Lander'):
+                 gym_env='LunarLander-v2', project='Lander'):
         Utils.disable_view_window()
         self.actions_dict = {ActionTypeEnum.SimpleAction: 'Simple Action',
                              ActionTypeEnum.ComplexAction: 'Complex Action'}
@@ -49,7 +49,6 @@ class DQNAgent:
         self.success_margin = success_margin
         self.success_score = success_score
         self.project = project
-        self.algorithm = algorithm
 
         self.epsilon = 1.0
         self.epsilon_decay = .99
@@ -178,8 +177,7 @@ class DQNAgent:
 
     def train_during_episode(self):
         if len(self.memory) >= self.batch_size:
-            if self.algorithm == 'dqn':
-                self.replay_dqn()
+            self.replay_dqn()
 
     def replay_dqn(self):
         minibatch = random.sample(self.memory, self.batch_size)

@@ -11,7 +11,7 @@ n_episodes = 400
 duration = 500
 action = 2
 agent = DQNAgent.DQNAgent(action_type=action, batch_size=128, model_type=2, success_margin=150, success_score=-100,
-                          record_video=True, target_model=True, memory_size=None, algorithm="dqn",
+                          record_video=True, target_model=True, memory_size=None,
                           gym_env="Acrobot-v1", project="Acrobot")
 start = datetime.now().time().strftime('%H:%M:%S')
 
