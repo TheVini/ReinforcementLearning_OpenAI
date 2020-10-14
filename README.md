@@ -177,40 +177,47 @@
 
 ## [4. OpenAI Gym - Pendulum-v0](https://gym.openai.com/envs/Pendulum-v0/)
 
-<table align="center">
-    <thead>
-        <tr>
-            <th>Topic</th>
-            <th>Note</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td align="center">Goal</td>
-            <td align="center">Swinging it up so it stays upright.</td>
-        </tr>
-        <tr>
-            <td align="center">Definition of success</td>
-            <td align="center">Average score of at least -200 points for the last 150 episodes.</td>
-        </tr>
-        <tr>
-            <td align="center">Training duration</td>
-            <td align="center">5m 49s</td>
-        </tr>
-        <tr>
-            <td align="center">Technique</td>
-            <td align="center">Deep Deterministic Policy Gradient (experience replay and target network)</td>
-        </tr>
-        <tr>
-            <td align="center">Action Space Type</td>
-            <td align="center">Continuous</td>
-        </tr>
-        <tr>
-            <td align="center">Action selector</td>
-            <td align="center">Predicted values with noisy perturbations (Ornstein-Uhlenbeck process)</td>
-        </tr>
-    </tbody>
-</table>
+<details>
+<summary>
+<i>Show technical info</i>
+</summary>
+    <table align="center">
+        <thead>
+            <tr>
+                <th>Topic</th>
+                <th>Note</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td align="center">Goal</td>
+                <td align="center">Swinging it up so it stays upright.</td>
+            </tr>
+            <tr>
+                <td align="center">Definition of success</td>
+                <td align="center">Average score of at least -200 points for the last 150 episodes.</td>
+            </tr>
+            <tr>
+                <td align="center">Training duration</td>
+                <td align="center">5m 49s</td>
+            </tr>
+            <tr>
+                <td align="center">Technique</td>
+                <td align="center">Deep Deterministic Policy Gradient (experience replay and target network)</td>
+            </tr>
+            <tr>
+                <td align="center">Action Space Type</td>
+                <td align="center">Continuous</td>
+            </tr>
+            <tr>
+                <td align="center">Action selector</td>
+                <td align="center">Predicted values with noisy perturbations (Ornstein-Uhlenbeck process)</td>
+            </tr>
+        </tbody>
+    </table>
+</details>
+
+
 
 <table align="center">
     <thead>
