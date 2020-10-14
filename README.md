@@ -1,10 +1,3 @@
-## Computer and General Spec
-- CPU: i5-8400
-- RAM: 1x16 Gb 2133Mhz DDR4 
-- GPU: GeForce GTX 1060 6GB
-- Driver: Cuda 10.1
-- IDE: PyCharm 
-- OS: Ubuntu 20.04
 
 #### [1. OpenAI Gym - LunarLander-v2](https://gym.openai.com/envs/LunarLander-v2/)
 
@@ -229,3 +222,11 @@
         </tr>
     </tbody>
 </table>
+
+## Computer and General Spec
+- CPU: i5-8400
+- RAM: 1x16 Gb 2133Mhz DDR4 
+- GPU: GeForce GTX 1060 6GB
+- Driver: Cuda 10.1
+- IDE: PyCharm 
+- OS: Ubuntu 20.04

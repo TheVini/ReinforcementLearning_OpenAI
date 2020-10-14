@@ -3,7 +3,7 @@ from datetime import datetime
 import numpy as np
 
 '''
-agent = RandomAgentTest.RandomAgent(gym_env="MountainCarContinuous-v0")
+agent = RandomAgentTest.RandomAgent(gym_env="CarRacing-v0")
 agent.run()
 '''
 
