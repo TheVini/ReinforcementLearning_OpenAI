@@ -4,9 +4,8 @@
 3. OpenAI Gym - Acrobot-v1
 4. OpenAI Gym - Pendulum-v0
 
----
 
-#### [1. OpenAI Gym - LunarLander-v2](https://gym.openai.com/envs/LunarLander-v2/)
+## [1. OpenAI Gym - LunarLander-v2](https://gym.openai.com/envs/LunarLander-v2/)
 
 <table align="center">
     <thead>
@@ -62,9 +61,7 @@
     </tbody>
 </table>
 
----
-
-#### [2. OpenAI Gym - MountainCar-v0](https://gym.openai.com/envs/MountainCar-v0/)
+## [2. OpenAI Gym - MountainCar-v0](https://gym.openai.com/envs/MountainCar-v0/)
 
 <table align="center">
     <thead>
@@ -120,9 +117,8 @@
     </tbody>
 </table>
 
----
 
-#### [3. OpenAI Gym - Acrobot-v1](https://gym.openai.com/envs/Acrobot-v1/)
+## [3. OpenAI Gym - Acrobot-v1](https://gym.openai.com/envs/Acrobot-v1/)
 
 <table align="center">
     <thead>
@@ -178,9 +174,8 @@
     </tbody>
 </table>
 
----
 
-#### [4. OpenAI Gym - Pendulum-v0](https://gym.openai.com/envs/Pendulum-v0/)
+## [4. OpenAI Gym - Pendulum-v0](https://gym.openai.com/envs/Pendulum-v0/)
 
 <table align="center">
     <thead>
