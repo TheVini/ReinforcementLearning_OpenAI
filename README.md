@@ -194,7 +194,7 @@
         </tr>
         <tr>
             <td align="center">Training duration</td>
-            <td align="center"> </td>
+            <td align="center">5m 49s</td>
         </tr>
         <tr>
             <td align="center">Technique</td>
@@ -206,7 +206,7 @@
         </tr>
         <tr>
             <td align="center">Action selector</td>
-            <td align="center"> </td>
+            <td align="center">Clipped predict values with noise</td>
         </tr>
     </tbody>
 </table>
@@ -222,6 +222,9 @@
         <tr>
             <td align="center">
                 <img src="https://github.com/TheVini/DeepReinforcement_OpenAI/blob/master/Others/pendulum_before.gif" width="300" height="200">
+            </td>
+            <td align="center">
+                <img src="https://github.com/TheVini/DeepReinforcement_OpenAI/blob/master/Others/pendulum_after.gif" width="300" height="200">
             </td>
         </tr>
     </tbody>

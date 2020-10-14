@@ -1,6 +1,7 @@
 import tensorflow as tf
 from datetime import datetime
 from Utils import DDPGAgent, Utils
+import numpy as np
 
 agent = DDPGAgent.DDPGAgent(batch_size=64, success_score=-200, memory_size=50000,
                             record_video=False, gym_env='Pendulum-v0')

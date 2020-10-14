@@ -228,11 +228,10 @@ class DDPGAgent:
             state = self.env.reset()
             state = np.reshape(state, [1, self.state_size])
             while True:
-                act_values = self.rootModel.actor_model.predict(state)[0]
-                print(act_values)
-                next_state, reward, done, _ = self.env.step(act_values[0])
+                act_values = [np.array(self.rootModel.actor_model.predict(state)[0])]
+                next_state, reward, done, _ = self.env.step(act_values)
                 next_state = np.reshape(next_state, [1, self.state_size])
-                score += reward
+                score += reward[0]
                 state = next_state
                 if done:
                     break
