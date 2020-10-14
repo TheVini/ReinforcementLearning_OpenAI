@@ -1,4 +1,4 @@
-from Utils import DQNAgent, Utils, RandomAgentTest
+from Utils import DQLAgent, Utils, RandomAgentTest
 from datetime import datetime
 import numpy as np
 
@@ -11,7 +11,7 @@ n_episodes = 400
 duration = 200
 action = 2
 actions = [np.array([1, 0, 0]), np.array([0, 1, 0]), np.array([0, 0, 1])]
-agent = DQNAgent.DQNAgent(action_type=action, batch_size=128, model_type=3, success_margin=100, success_score=-110,
+agent = DQLAgent.DQLAgent(action_type=action, batch_size=128, model_type=3, success_margin=100, success_score=-110,
                           record_video=True, target_model=True, memory_size=None,
                           gym_env="MountainCar-v0", project="MountainCar")
 start = datetime.now().time().strftime('%H:%M:%S')

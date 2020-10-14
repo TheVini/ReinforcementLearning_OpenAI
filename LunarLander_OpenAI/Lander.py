@@ -1,4 +1,4 @@
-from Utils import DQNAgent, Utils
+from Utils import DQLAgent, Utils
 from datetime import datetime
 import numpy as np
 
@@ -7,7 +7,7 @@ n_episodes = 400
 duration = 7000
 action = 1
 
-agent = DQNAgent.DQNAgent(action_type=action, batch_size=128, model_type=1, success_margin=150,
+agent = DQLAgent.DQLAgent(action_type=action, batch_size=128, model_type=1, success_margin=150,
                           success_score=200, record_video=False, target_model=True)
 start = datetime.now().time().strftime('%H:%M:%S')
 
