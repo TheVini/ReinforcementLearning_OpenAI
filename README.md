@@ -7,40 +7,45 @@
 
 ## [1. OpenAI Gym - LunarLander-v2](https://gym.openai.com/envs/LunarLander-v2/)
 
-<table align="center">
-    <thead>
-        <tr>
-            <th>Topic</th>
-            <th>Note</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td align="center">Goal</td>
-            <td align="center">Landing the spaceship.</td>
-        </tr>
-        <tr>
-            <td align="center">Definition of success</td>
-            <td align="center">Average score of at least 200 points for the last 150 episodes.</td>
-        </tr>
-        <tr>
-            <td align="center">Training duration</td>
-            <td align="center">1h 51m 28s</td>
-        </tr>
-        <tr>
-            <td align="center">Technique</td>
-            <td align="center">Deep Q-Learning (experience replay and target network)</td>
-        </tr>
-        <tr>
-            <td align="center">Action Space Type</td>
-            <td align="center">Discrete</td>
-        </tr>
-        <tr>
-            <td align="center">Action selector</td>
-            <td align="center">Epsilon greedy</td>
-        </tr>
-    </tbody>
-</table>
+<details>
+<summary>
+<i>Click here for technical info</i>
+</summary>
+    <table align="center">
+        <thead>
+            <tr>
+                <th>Topic</th>
+                <th>Note</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td align="center">Goal</td>
+                <td align="center">Landing the spaceship.</td>
+            </tr>
+            <tr>
+                <td align="center">Definition of success</td>
+                <td align="center">Average score of at least 200 points for the last 150 episodes.</td>
+            </tr>
+            <tr>
+                <td align="center">Training duration</td>
+                <td align="center">1h 51m 28s</td>
+            </tr>
+            <tr>
+                <td align="center">Technique</td>
+                <td align="center">Deep Q-Learning (experience replay and target network)</td>
+            </tr>
+            <tr>
+                <td align="center">Action Space Type</td>
+                <td align="center">Discrete</td>
+            </tr>
+            <tr>
+                <td align="center">Action selector</td>
+                <td align="center">Epsilon greedy</td>
+            </tr>
+        </tbody>
+    </table>
+</details>
 
 <table align="center">
     <thead>
@@ -63,40 +68,45 @@
 
 ## [2. OpenAI Gym - MountainCar-v0](https://gym.openai.com/envs/MountainCar-v0/)
 
-<table align="center">
-    <thead>
-        <tr>
-            <th>Topic</th>
-            <th>Note</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td align="center">Goal</td>
-            <td align="center">Climbing the mountain.</td>
-        </tr>
-        <tr>
-            <td align="center">Definition of success</td>
-            <td align="center">Average score of at least -110 points for the last 100 episodes.</td>
-        </tr>
-        <tr>
-            <td align="center">Training duration</td>
-            <td align="center">17m 48s</td>
-        </tr>
-        <tr>
-            <td align="center">Technique</td>
-            <td align="center">Deep Q-Learning (experience replay and target network)</td>
-        </tr>
-        <tr>
-            <td align="center">Action Space Type</td>
-            <td align="center">Discrete</td>
-        </tr>
-        <tr>
-            <td align="center">Action selector</td>
-            <td align="center">Epsilon greedy and Softmax</td>
-        </tr>
-    </tbody>
-</table>
+<details>
+<summary>
+<i>Click here for technical info</i>
+</summary>
+    <table align="center">
+        <thead>
+            <tr>
+                <th>Topic</th>
+                <th>Note</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td align="center">Goal</td>
+                <td align="center">Climbing the mountain.</td>
+            </tr>
+            <tr>
+                <td align="center">Definition of success</td>
+                <td align="center">Average score of at least -110 points for the last 100 episodes.</td>
+            </tr>
+            <tr>
+                <td align="center">Training duration</td>
+                <td align="center">17m 48s</td>
+            </tr>
+            <tr>
+                <td align="center">Technique</td>
+                <td align="center">Deep Q-Learning (experience replay and target network)</td>
+            </tr>
+            <tr>
+                <td align="center">Action Space Type</td>
+                <td align="center">Discrete</td>
+            </tr>
+            <tr>
+                <td align="center">Action selector</td>
+                <td align="center">Epsilon greedy and Softmax</td>
+            </tr>
+        </tbody>
+    </table>
+</details>
 
 <table align="center">
     <thead>
@@ -120,40 +130,45 @@
 
 ## [3. OpenAI Gym - Acrobot-v1](https://gym.openai.com/envs/Acrobot-v1/)
 
-<table align="center">
-    <thead>
-        <tr>
-            <th>Topic</th>
-            <th>Note</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td align="center">Goal</td>
-            <td align="center">Swinging the end of the lower link up to a given height (top line).</td>
-        </tr>
-        <tr>
-            <td align="center">Definition of success</td>
-            <td align="center">Average score of at least -100 points for the last 150 episodes.</td>
-        </tr>
-        <tr>
-            <td align="center">Training duration</td>
-            <td align="center">23m 05s</td>
-        </tr>
-        <tr>
-            <td align="center">Technique</td>
-            <td align="center">Deep Q-Learning (experience replay and target network)</td>
-        </tr>
-        <tr>
-            <td align="center">Action Space Type</td>
-            <td align="center">Discrete</td>
-        </tr>
-        <tr>
-            <td align="center">Action selector</td>
-            <td align="center">Epsilon greedy and Softmax</td>
-        </tr>
-    </tbody>
-</table>
+<details>
+<summary>
+<i>Click here for technical info</i>
+</summary>
+    <table align="center">
+        <thead>
+            <tr>
+                <th>Topic</th>
+                <th>Note</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td align="center">Goal</td>
+                <td align="center">Swinging the end of the lower link up to a given height (top line).</td>
+            </tr>
+            <tr>
+                <td align="center">Definition of success</td>
+                <td align="center">Average score of at least -100 points for the last 150 episodes.</td>
+            </tr>
+            <tr>
+                <td align="center">Training duration</td>
+                <td align="center">23m 05s</td>
+            </tr>
+            <tr>
+                <td align="center">Technique</td>
+                <td align="center">Deep Q-Learning (experience replay and target network)</td>
+            </tr>
+            <tr>
+                <td align="center">Action Space Type</td>
+                <td align="center">Discrete</td>
+            </tr>
+            <tr>
+                <td align="center">Action selector</td>
+                <td align="center">Epsilon greedy and Softmax</td>
+            </tr>
+        </tbody>
+    </table>
+</details>
 
 <table align="center">
     <thead>
@@ -174,12 +189,11 @@
     </tbody>
 </table>
 
-
 ## [4. OpenAI Gym - Pendulum-v0](https://gym.openai.com/envs/Pendulum-v0/)
 
 <details>
 <summary>
-<i>Show technical info</i>
+<i>Click here for technical info</i>
 </summary>
     <table align="center">
         <thead>
@@ -216,8 +230,6 @@
         </tbody>
     </table>
 </details>
-
-
 
 <table align="center">
     <thead>
