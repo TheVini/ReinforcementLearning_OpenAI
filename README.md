@@ -206,7 +206,7 @@
         </tr>
         <tr>
             <td align="center">Action selector</td>
-            <td align="center">Clipped predict values with noise</td>
+            <td align="center">Predicted values with noisy perturbations (Ornstein-Uhlenbeck process)</td>
         </tr>
     </tbody>
 </table>
