@@ -257,3 +257,4 @@
 - Driver: Cuda 10.1
 - IDE: PyCharm 
 - OS: Ubuntu 20.04
+- AI Framework: Keras

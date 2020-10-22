@@ -34,15 +34,26 @@ class DLModel:
                 self.target_model = self._build_model_dql_006()
             self.update_target_model()
         elif self.algorithm == 'ddpg':
-            self.actor_model = self.get_actor_001(state_size, upper_bound)
-            self.critic_model = self.get_critic_001(state_size, action_size)
+            if model_type == 1:
+                self.actor_model = self.get_actor_001(state_size, upper_bound)
+                self.critic_model = self.get_critic_001(state_size, action_size)
 
-            self.target_actor = self.get_actor_001(state_size, upper_bound)
-            self.target_critic = self.get_critic_001(state_size, action_size)
+                self.target_actor = self.get_actor_001(state_size, upper_bound)
+                self.target_critic = self.get_critic_001(state_size, action_size)
+
+            elif model_type == 2:
+                self.actor_model = self.get_actor_002(state_size, upper_bound)
+                self.critic_model = self.get_critic_002(state_size, action_size)
+
+                self.target_actor = self.get_actor_002(state_size, upper_bound)
+                self.target_critic = self.get_critic_002(state_size, action_size)
 
             # Making the weights equal initially
             self.target_actor.set_weights(self.actor_model.get_weights())
             self.target_critic.set_weights(self.critic_model.get_weights())
+        elif self.algorithm == 'sac':
+            if model_type == 1:
+                print("OK")
 
     def _build_model_dql_001(self):
         model = tf.keras.models.Sequential()
@@ -114,7 +125,7 @@ class DLModel:
         inputs = layers.Input(shape=(num_states,))
         out = layers.Dense(256, activation="relu")(inputs)
         out = layers.Dense(256, activation="relu")(out)
-        outputs = layers.Dense(1, activation="tanh", kernel_initializer=last_init)(out)
+        outputs = layers.Dense(self.action_size, activation="tanh", kernel_initializer=last_init)(out)
 
         # Our upper bound is 2.0 for Pendulum.
         outputs = outputs * upper_bound
@@ -142,6 +153,70 @@ class DLModel:
         model = tf.keras.Model([state_input, action_input], outputs)
 
         return model
+
+    def get_actor_002(self, num_states, upper_bound):
+        # Initialize weights between -3e-3 and 3-e3
+        last_init = tf.random_uniform_initializer(minval=-0.003, maxval=0.003)
+
+        inputs = layers.Input(shape=(num_states,))
+        out = layers.Dense(600, activation="relu")(inputs)
+        out = layers.Dense(300, activation="relu")(out)
+        outputs = layers.Dense(self.action_size, activation="tanh", kernel_initializer=last_init)(out)
+
+        # Our upper bound is 2.0 for Pendulum.
+        outputs = outputs * upper_bound
+        model = tf.keras.Model(inputs, outputs)
+        return model
+
+    def get_critic_002(self, num_states, num_actions):
+        # State as input
+        state_input = layers.Input(shape=num_states)
+        state_out = layers.Dense(600, activation="relu")(state_input)
+        state_out = layers.Dense(300, activation="relu")(state_out)
+
+        # Action as input
+        action_input = layers.Input(shape=num_actions)
+        action_out = layers.Dense(300, activation="relu")(action_input)
+
+        # Both are passed through seperate layer before concatenating
+        concat = layers.Concatenate()([state_out, action_out])
+
+        out = layers.Dense(600, activation="relu")(concat)
+        out = layers.Dense(300, activation="relu")(out)
+        outputs = layers.Dense(1)(out)
+
+        # Outputs single value for give state-action
+        model = tf.keras.Model([state_input, action_input], outputs)
+
+        return model
+
+    def get_value_network_001(self, num_states, hidden_layer_size):
+        # Initialize weights between -3e-3 and 3-e3
+        last_init = tf.random_uniform_initializer(minval=-0.003, maxval=0.003)
+
+        inputs = layers.Input(shape=(num_states,))
+        out = layers.Dense(hidden_layer_size, activation="relu")(inputs)
+        out = layers.Dense(hidden_layer_size, activation="relu")(out)
+        outputs = layers.Dense(1, activation="linear", kernel_initializer=last_init)(out)
+
+        model = tf.keras.Model(inputs, outputs)
+        return model
+
+    def get_SoftQNetwork_001(self, num_states, num_actions, hidden_layer_size):
+        # Initialize weights between -3e-3 and 3-e3
+        last_init = tf.random_uniform_initializer(minval=-0.003, maxval=0.003)
+
+        input_size = layers.Concatenate()([num_states, num_actions])
+        inputs = layers.Input(shape=(input_size,))
+        out = layers.Dense(hidden_layer_size, activation="relu")(inputs)
+        out = layers.Dense(hidden_layer_size, activation="relu")(out)
+        outputs = layers.Dense(1, activation="linear", kernel_initializer=last_init)(out)
+
+        model = tf.keras.Model(inputs, outputs)
+        return model
+
+    def get_PolicyNetwork_001(self):
+        
 
     @staticmethod
     def loss_fn(preds, r):

@@ -137,7 +137,7 @@ class Buffer:
 
 class DDPGAgent:
     def __init__(self, batch_size=32, success_margin=150, success_score=200,
-                 action_size=None, memory_size=None, record_video=False,
+                 action_size=None, memory_size=None, model_type=None, record_video=False,
                  gym_env='Pendulum-v0', project='Pendulum'):
         Utils.disable_view_window()
 
@@ -168,7 +168,7 @@ class DDPGAgent:
         self.lower_bound = self.env.action_space.low[0]
 
         self.rootModel = NNModel.DLModel(self.env, self.action_size, self.state_size,
-                                         self.upper_bound, algorithm='ddpg')
+                                         self.upper_bound, model_type=model_type, algorithm='ddpg')
 
         std_dev = 0.2
         self.ou_noise = OUActionNoise(mean=np.zeros(1), std_deviation=float(std_dev) * np.ones(1))

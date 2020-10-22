@@ -10,6 +10,14 @@ class RandomAgent:
             self.action_size = self.env.action_space.shape[0]
         except:
             self.action_size = self.env.action_space.n
+        try:
+            upper_bound = self.env.action_space.high[0]
+            lower_bound = self.env.action_space.low[0]
+
+            print("Max Value of Action ->  {}".format(upper_bound))
+            print("Min Value of Action ->  {}".format(lower_bound))
+        except:
+            print("Not able to show action space limits")
         print("Observation space: {}\nAction Space: {}".format(self.env.observation_space.shape[0],
                                                                self.action_size))
 
