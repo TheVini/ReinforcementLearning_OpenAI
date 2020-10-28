@@ -1,0 +1,12 @@
+Agent info:
+	Batch size: 64
+	Epoch(s): 1
+	Memory length: 1
+	Gamma: 0.99
+	Epsilon decay: 0.99
+	Success Margin: -150
+	Action Type: Complex Action
+	Target model: Mario
+
+Episode: 1/400, rounds: 300, epsilon: 1.0, max_distance: 435score: 380.0, reward: 0, elapsed time: 0:00:09, max_episode_len: 100, min_progress: 0.05, x_pos_sync_rate: 10
+Episode: 2/400, rounds: 400, epsilon: 0.99, max_distance: 596score: 534.0, reward: 0, elapsed time: 0:00:22, max_episode_len: 100, min_progress: 0.05, x_pos_sync_rate: 10

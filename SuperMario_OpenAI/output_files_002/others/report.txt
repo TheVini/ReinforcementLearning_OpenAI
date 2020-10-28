@@ -1,0 +1,10 @@
+Agent info:
+	Batch size: 64
+	Epoch(s): 1
+	Memory length: 1
+	Gamma: 0.99
+	Epsilon decay: 0.99
+	Success Margin: -150
+	Action Type: Complex Action
+	Target model: Mario
+

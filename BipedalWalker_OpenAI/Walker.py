@@ -6,7 +6,6 @@ import time
 '''
 agent = RandomAgentTest.RandomAgent(gym_env="BipedalWalker-v3")
 agent.run()
-
 '''
 
 '''

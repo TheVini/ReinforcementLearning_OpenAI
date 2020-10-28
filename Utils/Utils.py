@@ -1,6 +1,8 @@
 from scipy.ndimage.filters import gaussian_filter1d
 from IPython.display import clear_output
+from skimage.transform import resize
 from matplotlib import pyplot as plt
+from PIL import Image
 from os import walk
 import numpy as np
 import os
@@ -125,3 +127,74 @@ def get_last_folder_index():
     if len(directories) == 0:
         return '001'
     return '{:03d}'.format(max(directories) + 1)
+
+
+def downscale_obs(obs, new_size=(42, 42), to_gray=True):
+    """
+    Downscale_obs: rescales RGB image to lower dimensions with option to change to grayscale
+    obs: Numpy array or PyTorch Tensor of dimensions Ht x Wt x 3 (channels)
+    to_gray: if True, will use max to sum along channel dimension for greatest contrast
+    """
+    if to_gray:
+        return resize(obs, new_size, anti_aliasing=True).max(axis=2)
+    else:
+        return resize(obs, new_size, anti_aliasing=True)
+
+
+def cut_image(state):
+    """
+    Remove the upper image part that contains score  info, lifes, world and time.
+    :param state: current state
+    :return:
+    """
+    PIL_image = Image.fromarray(state.astype('uint8'), 'RGB')
+    return np.array(PIL_image.crop((0, 32, 256, 240)))
+
+
+def preprocess_state(state_to_process, new_state_size):
+    """
+    Reduce image scale, reshape, and reduce image pixels values
+    :param state_to_process: new state
+    :param new_state_size: target state
+    :return: preprocessed state
+    """
+    state_to_process = downscale_obs(state_to_process, new_state_size)
+    state_to_process = state_to_process.reshape([1, new_state_size[0], new_state_size[1], 1]).astype('float32')
+    return state_to_process / 255.
+
+
+def prepare_initial_state(state, state_size, channels=3):
+    """
+    Preprocess image to reduce state and channels, and cut image
+    :param state: current state
+    :param state_size: target state size
+    :param channels: target channels
+    :return:
+    """
+    state = cut_image(state)
+    state = preprocess_state(state, state_size)
+    return state.repeat(channels, axis=channels)
+
+
+def prepare_multi_state(new_state, state_size, old_state, channels=3, state_single_size=42):
+    """
+    Create a sequence of "channels" different images.
+    :param new_state: current state to process
+    :param state_size: target state size
+    :param old_state: old frames
+    :param channels: target channels amount
+    :param state_single_size: target state size for channels sequence
+    :return: a sequence of channels with different images
+    """
+    new_state = cut_image(new_state)
+    old_state = np.reshape(old_state, (1, channels, state_single_size, state_single_size))
+    new_state = np.reshape(preprocess_state(new_state, state_size),
+                           (1, 1, state_single_size, state_single_size))
+
+    for i in range(channels):
+        if i == (channels - 1):
+            old_state[0][i] = new_state
+        else:
+            old_state[0][i] = old_state[0][i + 1]
+
+    return np.reshape(old_state, (1, state_single_size, state_single_size, channels))

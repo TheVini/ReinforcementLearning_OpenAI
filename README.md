@@ -3,6 +3,9 @@
 2. OpenAI Gym - MountainCar-v0
 3. OpenAI Gym - Acrobot-v1
 4. OpenAI Gym - Pendulum-v0
+5. OpenAI Gym - LunarLanderContinuous-v2 (not solved yet. No sucess with DDPG, alternative: SAC)
+6. OpenAI Gym - BipedalWalker-v2 (not solved yet. No sucess with DDPG, alternative: SAC)
+7. OpenAI Gym - Super-Mario-Bros (not solved yet)
 
 
 ## [1. OpenAI Gym - LunarLander-v2](https://gym.openai.com/envs/LunarLander-v2/)

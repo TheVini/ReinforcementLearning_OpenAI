@@ -18,21 +18,23 @@ class DQLAgent:
     def __init__(self, action_type=1, batch_size=32,
                  model_type=1, success_margin=150, success_score=200,
                  action_size=None, memory_size=None, record_video=False, target_model=False,
-                 gym_env='LunarLander-v2', project='Lander'):
+                 gym_env=None, project=None):
         Utils.disable_view_window()
         self.actions_dict = {ActionTypeEnum.SimpleAction: 'Simple Action',
                              ActionTypeEnum.ComplexAction: 'Complex Action'}
 
-        self.env = gym.make(gym_env)
-        self.state_size = self.env.observation_space.shape[0]
+        if gym_env is not None:
+            self.env = gym.make(gym_env)
+            self.state_size = self.env.observation_space.shape[0]
 
-        if action_size is None:
-            try:
-                self.action_size = self.env.action_space.shape[0]
-            except:
-                self.action_size = self.env.action_space.n
-        else:
-            self.action_size = action_size
+            if action_size is None:
+                try:
+                    self.action_size = self.env.action_space.shape[0]
+                except:
+                    self.action_size = self.env.action_space.n
+            else:
+                self.action_size = action_size
+            self.action = self.env.action_space.sample()
 
         self.record_video = record_video
         self.action_type = ActionTypeEnum(action_type)
@@ -40,7 +42,6 @@ class DQLAgent:
         self.target_model = target_model
 
         self.highest_score = 0
-        self.action = self.env.action_space.sample()
         self.batch_size = batch_size
         self.epoch = 1
 
@@ -53,7 +54,8 @@ class DQLAgent:
         self.epsilon = 1.0
         self.epsilon_decay = .99
         self.epsilon_min = 0.01
-        self.DLModel = NNModel.DLModel(self.env, self.action_size, model_type, self.others_dir)
+        if gym_env is not None:
+            self.DLModel = NNModel.DLModel(self.env, self.action_size, model_type, self.others_dir)
         self.ep_score, self.renders, self.losses = [], [], []
 
         general_info = 'Agent info:\n\tBatch size: {}\n\tEpoch(s): {}\n\t' \
@@ -63,10 +65,14 @@ class DQLAgent:
                     self.epsilon_decay, self.success_margin, self.actions_dict[self.action_type], self.target_model)
         Utils.log_info(self.others_dir, general_info)
 
+    def append_new_frame(self):
+        """ Save generated env's frame """
+        self.renders.append(img_as_ubyte(resize(self.env.render(mode='rgb_array'), (640, 960, 3))))
+
     def remember(self, state, action, reward, next_state, done):
         if self.record_video:
             # Append new frame to video memory
-            self.renders.append(img_as_ubyte(resize(self.env.render(mode='rgb_array'), (640, 960, 3))))
+            self.append_new_frame()
         # Append set of parameters to memory
         self.memory.append((state, action, reward, next_state, done))
         # Send next state as old state

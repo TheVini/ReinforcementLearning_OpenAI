@@ -1,5 +1,5 @@
 from tensorflow.keras.utils import plot_model
-from tensorflow.keras.layers import Dense, LeakyReLU
+from tensorflow.keras.layers import Conv2D, Dense, Flatten, MaxPool2D, LeakyReLU, ReLU
 from tensorflow.keras.optimizers import Adam
 from tensorflow.keras import layers
 import tensorflow as tf
@@ -7,12 +7,24 @@ import numpy as np
 
 
 class DLModel:
-    def __init__(self, env, action_size, state_size=0, upper_bound=0, model_type=1, algorithm='dql', output_dir=''):
+    def __init__(self,
+                 env,
+                 action_size,
+                 state_size=0,
+                 states=0,
+                 upper_bound=0,
+                 model_type=1,
+                 algorithm='dql',
+                 output_dir=''):
+
         self.learning_rate = 0.001251
         self.output_dir = output_dir
         self.env = env
+        self.state_size = state_size
         self.action_size = action_size
         self.algorithm = algorithm
+        self.states = states
+
         if self.algorithm == 'dql':
             if model_type == 1:
                 self.model = self._build_model_dql_001()
@@ -32,6 +44,9 @@ class DLModel:
             elif model_type == 6:
                 self.model = self._build_model_dql_006()
                 self.target_model = self._build_model_dql_006()
+            elif model_type == 7:
+                self.model = self._build_model_dql_007_mario()
+                self.target_model = self._build_model_dql_007_mario()
             self.update_target_model()
         elif self.algorithm == 'ddpg':
             if model_type == 1:
@@ -115,6 +130,25 @@ class DLModel:
         model.add(Dense(self.action_size, activation='linear'))
         loss = tf.keras.losses.Huber()
         model.compile(loss=loss, optimizer=Adam(lr=self.learning_rate), metrics=['mse', 'mae'])
+        plot_model(model, to_file=self.output_dir + '/model.png', show_shapes=True)
+        return model
+
+    def _build_model_dql_007_mario(self):
+        model = tf.keras.models.Sequential()
+        state_shape = (self.state_size, self.state_size, self.states)
+
+        model.add(Conv2D(32, kernel_size=(8, 8), activation=LeakyReLU(), input_shape=state_shape))
+        model.add(MaxPool2D(pool_size=(2, 2)))
+        model.add(Conv2D(64, kernel_size=(4, 4), activation=LeakyReLU()))
+        model.add(MaxPool2D(pool_size=(2, 2)))
+        model.add(Conv2D(64, kernel_size=(3, 3), activation=LeakyReLU()))
+
+        model.add(Flatten())
+        model.add(Dense(512, activation=LeakyReLU(), name='layer_1'))
+        model.add(Dense(128, activation=ReLU(), name='layer_2'))
+        model.add(Dense(self.action_size, activation='linear', name='layer_3'))
+
+        model.compile(loss='mse', optimizer=Adam(lr=self.learning_rate), metrics=['mse'])
         plot_model(model, to_file=self.output_dir + '/model.png', show_shapes=True)
         return model
 
@@ -214,9 +248,6 @@ class DLModel:
 
         model = tf.keras.Model(inputs, outputs)
         return model
-
-    def get_PolicyNetwork_001(self):
-        
 
     @staticmethod
     def loss_fn(preds, r):
