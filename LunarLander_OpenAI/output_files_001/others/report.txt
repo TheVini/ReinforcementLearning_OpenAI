@@ -1,0 +1,10 @@
+Agent info:
+	Batch size: 128
+	Epoch(s): 1
+	Memory length: None
+	Gamma: 0.99
+	Epsilon decay: 0.99
+	Success Margin: -250
+	Action Type: Simple Action
+	Target model: True
+

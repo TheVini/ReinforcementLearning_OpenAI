@@ -1,0 +1,7 @@
+Progress: 1/100 | Score: 305.4829 | Avg. Score: 305.4829
+Progress: 2/100 | Score: 252.5251 | Avg. Score: 279.0040
+Progress: 3/100 | Score: 284.3684 | Avg. Score: 280.7921
+Progress: 4/100 | Score: 294.1683 | Avg. Score: 284.1361
+Progress: 5/100 | Score: 278.7138 | Avg. Score: 283.0517
+Progress: 6/100 | Score: 240.3685 | Avg. Score: 275.9378
+Progress: 7/100 | Score: 257.9381 | Avg. Score: 273.3664
