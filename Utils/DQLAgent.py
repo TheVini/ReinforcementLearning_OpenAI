@@ -1,8 +1,9 @@
 from collections import deque
-from Utils import NNModel, Utils
+import NNModel, Utils
 from skimage import img_as_ubyte
 from skimage.transform import resize
 from enum import Enum
+from PIL import Image, ImageDraw, ImageFont
 import numpy as np
 import gym
 import random
@@ -17,7 +18,7 @@ class ActionTypeEnum(Enum):
 class DQLAgent:
     def __init__(self, action_type=1, batch_size=32,
                  model_type=1, success_margin=150, success_score=200,
-                 action_size=None, memory_size=None, record_video=False, target_model=False,
+                 action_size=None, memory_size=None, record_video=False, record_video_on_test=False, target_model=False,
                  gym_env=None, project=None):
         Utils.disable_view_window()
         self.actions_dict = {ActionTypeEnum.SimpleAction: 'Simple Action',
@@ -37,6 +38,7 @@ class DQLAgent:
             self.action = self.env.action_space.sample()
 
         self.record_video = record_video
+        self.record_video_on_test = record_video_on_test
         self.action_type = ActionTypeEnum(action_type)
         self.model_output_dir, self.video_output_dir, self.others_dir = Utils.create_dirs()
         self.target_model = target_model
@@ -55,8 +57,8 @@ class DQLAgent:
         self.epsilon_decay = .99
         self.epsilon_min = 0.01
         if gym_env is not None:
-            self.DLModel = NNModel.DLModel(self.env, self.action_size, model_type, self.others_dir)
-        self.ep_score, self.renders, self.losses = [], [], []
+            self.DLModel = NNModel.DLModel(self.env, self.action_size, model_type, self.others_dir, algorithm='dql')
+        self.ep_score, self.renders, self.test_renders, self.losses = [], [], [], []
 
         general_info = 'Agent info:\n\tBatch size: {}\n\tEpoch(s): {}\n\t' \
                        'Memory length: {}\n\tGamma: {}\n\tEpsilon decay: {}\n\t' \
@@ -68,6 +70,24 @@ class DQLAgent:
     def append_new_frame(self):
         """ Save generated env's frame """
         self.renders.append(img_as_ubyte(resize(self.env.render(mode='rgb_array'), (640, 960, 3))))
+
+    def append_new_test_frame(self, epoch=0):
+        if self.record_video_on_test:
+            # Render image
+            image = self.env.render(mode='rgb_array')
+            # Transform array to image
+            image = Image.fromarray(image, 'RGB')
+            # Load font
+            font = ImageFont.truetype("/usr/share/fonts/truetype/freefont/FreeSans.ttf", 16)
+            # Create Draw object
+            d = ImageDraw.Draw(image)
+            # Write on image
+            img_text = "Teste: {:03d}".format(epoch)
+            d.text((10, 10), img_text, fill=(255, 255, 255), font=font)
+            # Image to Array
+            image = np.array(image)
+            image = resize(image, (640, 960, 3))
+            self.test_renders.append(img_as_ubyte(image))
 
     def remember(self, state, action, reward, next_state, done):
         if self.record_video:
@@ -170,6 +190,7 @@ class DQLAgent:
             state = self.env.reset()
             state = np.reshape(state, [1, self.state_size])
             while True:
+                self.append_new_test_frame(i+1)
                 act_values = self.DLModel.model.predict(state)[0]
                 next_state, reward, done, _ = self.env.step(np.argmax(act_values))
                 next_state = np.reshape(next_state, [1, self.state_size])
@@ -177,6 +198,12 @@ class DQLAgent:
                 state = next_state
                 if done:
                     break
+            if self.record_video_on_test:
+                # Set video name
+                video_name = self.video_output_dir + '/{}_test_{:08d}.mp4'.format(self.project, i + 1)
+                # Record video and clean render list
+                imageio.mimwrite(video_name, self.test_renders, fps=60)
+                self.test_renders.clear()
             test_score_list.append(score)
             score_text = "Progress: {}/{} | Score: {:.04f} | Avg. Score: {:.04f}".format(
                 (i + 1), test_rounds, score, np.mean(test_score_list))

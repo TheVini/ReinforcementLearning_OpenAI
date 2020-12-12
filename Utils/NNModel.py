@@ -77,7 +77,7 @@ class DLModel:
         model.add(Dense(48, activation=LeakyReLU()))
         model.add(Dense(self.action_size, activation='linear'))
         model.compile(loss='mse', optimizer=Adam(lr=self.learning_rate), metrics=['mse'])
-        plot_model(model, to_file=self.output_dir + '/model.png', show_shapes=True)
+        # plot_model(model, to_file=self.output_dir + '/model.png', show_shapes=True)
         return model
 
     def _build_model_dql_002(self):

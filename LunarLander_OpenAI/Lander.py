@@ -7,10 +7,11 @@ n_episodes = 400
 duration = 7000
 action = 1
 
-agent = DQLAgent.DQLAgent(action_type=action, batch_size=128, model_type=1, success_margin=150,
-                          success_score=200, record_video=False, target_model=True,
+agent = DQLAgent.DQLAgent(action_type=action, batch_size=128, model_type=4, success_margin=250,
+                          success_score=200, record_video=False, record_video_on_test=True, target_model=True,
                           gym_env='LunarLander-v2', project='Lander')
 start = datetime.now().time().strftime('%H:%M:%S')
+
 
 for e in range(n_episodes):
     score = 0.
