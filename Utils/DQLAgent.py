@@ -1,5 +1,5 @@
 from collections import deque
-import NNModel, Utils
+from Utils import NNModel, Utils
 from skimage import img_as_ubyte
 from skimage.transform import resize
 from enum import Enum

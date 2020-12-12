@@ -1,4 +1,4 @@
-from Utils import DQLAgent, Utils
+from Utils import DQLAgent, Utils, NNModel
 from datetime import datetime
 import numpy as np
 
@@ -12,7 +12,10 @@ agent = DQLAgent.DQLAgent(action_type=action, batch_size=128, model_type=4, succ
                           gym_env='LunarLander-v2', project='Lander')
 start = datetime.now().time().strftime('%H:%M:%S')
 
+# agent.test()
+agent.test('Analises/Analise_3/output_files_007/models/weights_final0287.hdf5')
 
+'''
 for e in range(n_episodes):
     score = 0.
     state = agent.env.reset()
@@ -40,3 +43,4 @@ for e in range(n_episodes):
         Utils.log_info(agent.others_dir, success_text)
         agent.test()
         break
+'''
